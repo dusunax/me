@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import ContentsWrapper from "src/packages/components/ContentsWrapper";
 
 export default function Header() {
   const ref = useRef(null);
@@ -13,7 +14,7 @@ export default function Header() {
 
   return (
     <header className="relative px-20 pt-8 h-[80vh] bg-white cursor-none">
-      <div className="relative h-full w-full max-w-screen-2xl mx-auto">
+      <ContentsWrapper className="h-full">
         <div className="relative w-[11rem]">
           <motion.div
             initial={{ scale: 0 }}
@@ -86,7 +87,7 @@ export default function Header() {
             className="mt-4 mb-10 y-1 border-[#d0beb7]"
           />
         </div>
-      </div>
+      </ContentsWrapper>
     </header>
   );
 }
