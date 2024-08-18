@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import FilmPerforations from "src/packages/components/FilmPerforations";
 import ContentsWrapper from "src/packages/components/ContentsWrapper";
+import YoutubeButton from "src/packages/components/YoutubeButton";
 
 export default function VideoSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -75,7 +76,7 @@ export default function VideoSection() {
   ];
 
   return (
-    <section className="relative h-[60vh] rounded-xl px-10 my-10">
+    <section className="relative h-[60vh] rounded-xl px-10 my-20">
       <ContentsWrapper className="h-full">
         <motion.div
           ref={videoSectionRef}
@@ -97,6 +98,11 @@ export default function VideoSection() {
             ))}
           </div>
           <FilmPerforations />
+          {isScrollingEnabled && (
+            <div className="absolute -right-4 -bottom-4">
+              <YoutubeButton />
+            </div>
+          )}
         </motion.div>
       </ContentsWrapper>
     </section>
