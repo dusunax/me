@@ -31,3 +31,14 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer utilities {
+  .scrollbar-hide {
+    overflow: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
