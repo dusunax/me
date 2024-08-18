@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import CustomCursor from "../components/Cursor";
 
 export default function Home() {
   const ref = useRef(null);
@@ -10,9 +11,11 @@ export default function Home() {
   const moveY1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const moveY2 = useTransform(scrollYProgress, [0, 1], [0, -800]);
   const moveY3 = useTransform(scrollYProgress, [0, 1], [0, -1000]);
+
   return (
     <main className="flex min-h-screen flex-col justify-between bg-blue-400">
-      <header className="relative px-20 pt-8 h-[80vh] bg-white">
+      <CustomCursor />
+      <header className="relative px-20 pt-8 h-[80vh] bg-white cursor-none">
         <div className="relative h-full w-full max-w-screen-2xl mx-auto">
           <div className="relative w-[11rem]">
             <motion.div
