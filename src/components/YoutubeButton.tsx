@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import Tooltip from "./ToolTip";
 
 export default function YoutubeButton() {
   const [isHovered, setIsHovered] = useState(false);
@@ -18,7 +19,9 @@ export default function YoutubeButton() {
         className="w-32 h-32 rounded-full flex items-center justify-center px-5 py-3 bg-red-600 text-white cursor-pointer shadow-lg"
       >
         <YoutubeIcon />
-        {isHovered && <Tooltip />}
+        {isHovered && (
+          <Tooltip text="Watch at Youtube Channel✨" className="w-40" />
+        )}
       </motion.div>
     </Link>
   );
@@ -40,19 +43,6 @@ function YoutubeIcon() {
       >
         <polygon points="30,20 30,80 80,50" fill="white" />
       </svg>
-    </motion.div>
-  );
-}
-
-function Tooltip() {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="w-40 absolute top-2 -translate-y-full left-1/2 -translate-x-1/2 px-3 py-1 bg-[#222222] text-white text-sm text-center rounded-md shadow-lg"
-    >
-      Watch on YouTube Channel✨
     </motion.div>
   );
 }
