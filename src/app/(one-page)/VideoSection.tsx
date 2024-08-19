@@ -85,7 +85,9 @@ export default function VideoSection() {
           animate={{
             opacity: isScrollingEnabled ? 1 : 0.85,
             scale: isScrollingEnabled ? 1 : 0.95,
-            backgroundColor: isScrollingEnabled ? "rgb(34,34,34)" : "#ffffff",
+            backgroundColor: isScrollingEnabled
+              ? "rgb(34,34,34)"
+              : "rgba(0,0,0,0)",
           }}
         >
           <FilmPerforations />

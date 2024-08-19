@@ -90,7 +90,6 @@ export default function Header() {
           <motion.hr
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            // transition={{ type: "keyframes" }}
             className="mt-4 mb-10 y-1 border-[#d0beb7]"
           />
         </div>
