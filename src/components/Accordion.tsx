@@ -1,19 +1,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-
-type Content = {
-  title: string;
-  subtitle: string;
-  description: string;
-  type: "book" | "article" | "documentation" | "video lecture";
-  images: string[];
-  duration: string;
-  link: string;
-  isFinished: boolean;
-};
+import type { StudyContent } from "../constant/study";
 
 type AccordionProps = {
-  contents: Content[];
+  contents: StudyContent[];
   currentContent: number;
   nextContent: () => void;
   prevContent: () => void;
