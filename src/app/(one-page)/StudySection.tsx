@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import ContentsWrapper from "../../components/ContentsWrapper";
 import StudyCanvas from "../../components/StudyCanvas";
@@ -7,7 +8,6 @@ import Accordion from "../../components/Accordion";
 import CurvedBackground from "../../components/CurvedBackground";
 import { STACKS } from "src/packages/constant/stack";
 import { STUDY_CONTENT } from "src/packages/constant/study";
-import Image from "next/image";
 
 export default function StudySection() {
   const ref = useRef(null);
@@ -159,13 +159,11 @@ export default function StudySection() {
                 <div className="relative" key={stack.name}>
                   <div className="relative w-8 h-8 rounded-full overflow-hidden shadow-md">
                     <div className="w-12 -ml-1">
-                      <Image
+                      <img
                         className="absoulte h-8"
                         src={stack.icon}
                         alt={stack.name}
                         title={stack.name}
-                        width={32}
-                        height={32}
                       />
                     </div>
                   </div>
