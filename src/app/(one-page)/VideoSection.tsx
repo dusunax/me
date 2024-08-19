@@ -80,7 +80,7 @@ export default function VideoSection() {
       <ContentsWrapper className="h-full">
         <motion.div
           ref={videoSectionRef}
-          className="h-full px-10 flex flex-col transition rounded-xl"
+          className="h-full px-10 flex flex-col transition rounded-xl shadow-2xl"
           initial={{ opacity: 1, scale: 1 }}
           animate={{
             opacity: isScrollingEnabled ? 1 : 0.85,

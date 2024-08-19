@@ -12,10 +12,11 @@ export default function YoutubeButton() {
       <motion.div
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95, rotate: 360 }}
+        transition={{ delay: 0.5 }}
         className="w-32 h-32 rounded-full flex items-center justify-center px-5 py-3 bg-red-600 text-white cursor-pointer shadow-lg"
       >
         <YoutubeIcon />
