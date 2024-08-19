@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useMemo } from "react";
 import { Texture, TextureLoader } from "three";
 import { useLoader, useFrame } from "@react-three/fiber";
 
@@ -6,14 +6,15 @@ type DiceProps = {
   images: string[];
 };
 
-const Dice: React.FC<DiceProps> = ({ images }) => {
-  const textures: Texture[] = images.map((img) =>
-    useLoader(TextureLoader, img)
-  );
-  const faces = Array.from(
-    { length: 6 },
-    (_, index) => textures[index % textures.length]
-  );
+export default function Dice({ images }: DiceProps) {
+  const textures: Texture[] = useLoader(TextureLoader, images) as Texture[];
+
+  const faces = useMemo(() => {
+    return Array.from(
+      { length: 6 },
+      (_, index) => textures[index % textures.length]
+    );
+  }, [textures]);
 
   const meshRef = useRef<any>(null);
 
@@ -31,6 +32,4 @@ const Dice: React.FC<DiceProps> = ({ images }) => {
       ))}
     </mesh>
   );
-};
-
-export default Dice;
+}

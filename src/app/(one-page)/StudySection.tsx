@@ -7,6 +7,7 @@ import Accordion from "../../components/Accordion";
 import CurvedBackground from "../../components/CurvedBackground";
 import { STACKS } from "src/packages/constant/stack";
 import { STUDY_CONTENT } from "src/packages/constant/study";
+import Image from "next/image";
 
 export default function StudySection() {
   const ref = useRef(null);
@@ -63,20 +64,21 @@ export default function StudySection() {
 
           <div className="w-1/2 flex flex-col gap-6">
             <p className="text-3xl text-right">
-              I've been working as a software developer for 1 year and 7 months
-              and developed 2 services since december 2022. I'm currently
-              looking for a new job opportunity.
+              I&apos;ve been working as a software developer for 1 year and 7
+              months and developed 2 services since december 2022. I&apos;m
+              currently looking for a new job opportunity.
             </p>
             <ul className="text-xl pl-2">
               <li>
                 <strong>Service 1:</strong> Education Service for Free Online
                 Courses and Video Contents. Collects and analyzes educational
-                data's metadata to provide personalized learning experiences.
+                data&apos;s metadata to provide personalized learning
+                experiences.
               </li>
               <li>
                 <strong>Service 2:</strong> Medical Service for Online Medical
                 Media Contents Sharing. Provides medical 3D contents and
-                ordering system for dental prostheses. It's a platform for
+                ordering system for dental prostheses. It&apos;s a platform for
                 dentists and dental technicians and help them to communicate.
               </li>
             </ul>
@@ -149,19 +151,21 @@ export default function StudySection() {
             </p>
             <p className="text-xl">
               I do have based on Web Publishing and Computer Graphics, major in
-              Formative Illustration. I'm interested in 3D Graphics and
+              Formative Illustration. I&apos;m interested in 3D Graphics and
               Interactive Web Development.
             </p>
             <div className="flex gap-2">
               {STACKS.map((stack) => (
-                <div className="relative">
+                <div className="relative" key={stack.name}>
                   <div className="relative w-8 h-8 rounded-full overflow-hidden shadow-md">
                     <div className="w-12 -ml-1">
-                      <img
+                      <Image
                         className="absoulte h-8"
                         src={stack.icon}
                         alt={stack.name}
                         title={stack.name}
+                        width={32}
+                        height={32}
                       />
                     </div>
                   </div>
