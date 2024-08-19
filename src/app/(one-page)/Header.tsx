@@ -10,7 +10,7 @@ export default function Header() {
 
   const moveY1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const moveY2 = useTransform(scrollYProgress, [0, 1], [0, -800]);
-  const moveY3 = useTransform(scrollYProgress, [0, 1], [0, -1000]);
+  const moveY3 = useTransform(scrollYProgress, [0, 1], [0, -1200]);
 
   return (
     <header className="relative px-20 pt-8 h-[80vh] bg-white cursor-none">
@@ -90,7 +90,7 @@ export default function Header() {
           <motion.hr
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ type: "keyframes" }}
+            // transition={{ type: "keyframes" }}
             className="mt-4 mb-10 y-1 border-[#d0beb7]"
           />
         </div>

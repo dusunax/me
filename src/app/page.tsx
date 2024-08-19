@@ -1,15 +1,18 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import ContentsWrapper from "../components/ContentsWrapper";
 import CustomCursor from "../components/Cursor";
 import Header from "./(one-page)/Header";
 import VideoSection from "./(one-page)/VideoSection";
 import { motion, useInView } from "framer-motion";
-import Tooltip from "../components/ToolTip";
+import StudyCanvas from "../components/StudyCanvas";
+import Accordion from "../components/Accordion";
+import AnimatedDivider from "../components/AnimatedDivider";
+import CurvedBackground from "../components/CurvedBackground";
 
 export default function Home() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref);
 
   const STACKS = [
     {
@@ -50,6 +53,78 @@ export default function Home() {
     },
   ];
 
+  type Content = {
+    title: string;
+    orignalTitle?: string;
+    subtitle: string;
+    description: string;
+    type: "book" | "article" | "documentation" | "video lecture";
+    duration: string;
+    images: string[];
+    link: string;
+    isFinished: boolean;
+  };
+
+  const [currentContent, setCurrentContent] = useState<number>(0);
+  const contents: Content[] = [
+    {
+      title: "모던 자바스크립트 딥 다이브",
+      orignalTitle: "Modern JavaScript Deep Dive",
+      subtitle: "자바스크립트의 핵심 개념과 동작 원리",
+      description: "The book is about modern JavaScript.",
+      duration: "2023.09.09 - 2023.12.30",
+      type: "book",
+      images: ["/book-1.png"],
+      link: "https://github.com/dusunax/javascript/tree/main/ppts/javascript",
+      isFinished: true,
+    },
+    {
+      title: "모던 리액트 딥 다이브",
+      orignalTitle: "Modern React Deep Dive",
+      subtitle: "리액트의 핵심 개념과 동작 원리",
+      description: "The book is about modern React.",
+      duration: "2024.03.04 - 2024.04.28",
+      type: "book",
+      images: ["/book-2.png"],
+      link: "https://github.com/monthly-cs/2024-03-modern-react-deep-dive/tree/main/docs/dusunax/presentation",
+      isFinished: true,
+    },
+    {
+      title: "이펙티브 타입스크립트",
+      orignalTitle: "Effective TypeScript",
+      subtitle: "타입스크립트의 동작 원리의 이해와 구체적인 조언 62가지",
+      description: "The book is about effective TypeScript.",
+      duration: "2024.05.12 - 2024.06.30",
+      type: "book",
+      images: ["/book-3.png"],
+      link: "https://github.com/dusunax/javascript/tree/main/ppts/typescript",
+      isFinished: true,
+    },
+    {
+      title: "개발자 온보딩 가이드",
+      orignalTitle: "The Missing Readme",
+      subtitle: "개발자 온보딩 가이드",
+      description: "The book is about developer onboarding guide.",
+      duration: "2024.08 -",
+      type: "book",
+      isFinished: false,
+      images: ["/book-4.png"],
+      link: "",
+    },
+  ];
+
+  const changeContentIndex = (index: number) => {
+    setCurrentContent(index);
+  };
+  const prevContent = () => {
+    if (currentContent === 0) return;
+    setCurrentContent((prevContent) => (prevContent - 1) % contents.length);
+  };
+  const nextContent = () => {
+    if (currentContent === contents.length - 1) return;
+    setCurrentContent((prevContent) => (prevContent + 1) % contents.length);
+  };
+
   return (
     <>
       <CustomCursor />
@@ -58,12 +133,23 @@ export default function Home() {
         <VideoSection />
 
         {/* Portfolio Gallery */}
-        <section className="relative flex flex-col w-full min-h-dvh  bg-white py-24">
-          <ContentsWrapper>
+        <section className="relative flex flex-col w-full min-h-dvh bg-white mt-40 py-24">
+          <CurvedBackground backgroundColor="#ffffff" direction="top" />
+          <ContentsWrapper className="my-20">
             <div className="flex justify-between gap-4">
               <div className="flex flex-col justify-between">
-                <h2 className="text-9xl">WORK</h2>
-                <ul className="flex gap-4">
+                <motion.h2
+                  className="text-9xl"
+                  initial={{ opacity: 0.5 }}
+                  animate={{ opacity: isInView ? 1 : 0.5 }}
+                >
+                  WORK
+                </motion.h2>
+                <motion.ul
+                  className="flex gap-4"
+                  initial={{ scaleY: 0 }}
+                  animate={{ scaleY: isInView ? 1 : 0 }}
+                >
                   <li>
                     <span className="text-8xl">2</span>
                     Services Developed.
@@ -73,7 +159,7 @@ export default function Home() {
                     <span className="text-8xl">7</span>months of development
                     experience.
                   </li>
-                </ul>
+                </motion.ul>
               </div>
 
               <div className="w-1/2 flex flex-col gap-6">
@@ -108,7 +194,6 @@ export default function Home() {
               className="h-10 my-4 border-t-0 border-l-0 border-r-0 border-2 border-[#d0beb7] rounded-[100px]"
             ></motion.div>
           </ContentsWrapper>
-
           <div className="relative overflow-hidden w-full h-[180px]">
             <motion.div
               className="absolute h-full flex items-center gap-5 pr-5 whitespace-nowrap text-7xl text-right bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
@@ -148,9 +233,15 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <ContentsWrapper>
+          <ContentsWrapper className="my-20">
             <div className="flex justify-between">
-              <h2 className="text-9xl">USE</h2>
+              <motion.h2
+                className="text-9xl"
+                initial={{ opacity: 0.5 }}
+                animate={{ opacity: isInView ? 1 : 0.5 }}
+              >
+                USE
+              </motion.h2>
               <div className="w-2/3 flex flex-col gap-4">
                 <p className="text-3xl">
                   <strong>I made this homepage with above skills.</strong>
@@ -181,7 +272,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
             <motion.div
               ref={ref}
               initial={{ scaleX: 0 }}
@@ -195,14 +285,22 @@ export default function Home() {
             <div className="flex flex-col gap-10 py-16">
               <div className="flex gap-16 items-end justify-between">
                 <div className="flex gap-8 items-end">
-                  <h2 className="text-9xl flex flex-col">
+                  <motion.h2
+                    className="text-9xl flex flex-col"
+                    initial={{ opacity: 0.2 }}
+                    animate={{ opacity: isInView ? 1 : 0.2 }}
+                  >
                     <span className="opacity-20">READ</span>
-                  </h2>
-                  <h3 className="text-4xl flex flex-col">
+                  </motion.h2>
+                  <motion.h3
+                    className="text-4xl flex flex-col"
+                    initial={{ scaleY: 0 }}
+                    animate={{ scaleY: isInView ? 1 : 0 }}
+                  >
                     <strong className="opacity-40">BOOKS</strong>
                     <strong className="opacity-60">ARTICLES</strong>
                     <strong className="opacity-90">DOCUMENTATION</strong>
-                  </h3>
+                  </motion.h3>
                 </div>
                 <div className="flex-1">
                   <p className="text-3xl mb-2">
@@ -213,6 +311,19 @@ export default function Home() {
                     <br />
                     The Missing Readme
                   </p>
+                </div>
+              </div>
+
+              <div className="flex">
+                <Accordion
+                  contents={contents}
+                  currentContent={currentContent}
+                  nextContent={nextContent}
+                  prevContent={prevContent}
+                  changeContentIndex={changeContentIndex}
+                />
+                <div className="w-full max-h-[600px] h-[60vh] bg-[#d0beb7] rounded-xl">
+                  <StudyCanvas content={contents[currentContent]} />
                 </div>
               </div>
             </div>

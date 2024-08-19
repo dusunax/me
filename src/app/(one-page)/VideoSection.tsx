@@ -76,7 +76,7 @@ export default function VideoSection() {
   ];
 
   return (
-    <section className="relative h-[60vh] rounded-xl px-10 my-20">
+    <section className="relative h-[70vh] rounded-xl px-10 my-24">
       <ContentsWrapper className="h-full">
         <motion.div
           ref={videoSectionRef}
