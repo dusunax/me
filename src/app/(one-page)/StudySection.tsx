@@ -32,6 +32,7 @@ export default function StudySection() {
 
   return (
     <section className="relative flex flex-col w-full min-h-dvh bg-white mt-40 py-24">
+      <div id="work-section" />
       <CurvedBackground backgroundColor="#ffffff" direction="top" />
       <ContentsWrapper className="my-20">
         <div className="flex justify-between gap-4">
@@ -81,7 +82,6 @@ export default function StudySection() {
             </ul>
           </div>
         </div>
-
         <motion.div
           ref={ref}
           initial={{ scaleX: 0 }}
@@ -90,6 +90,8 @@ export default function StudySection() {
           className="h-10 my-4 border-t-0 border-l-0 border-r-0 border-2 border-[#d0beb7] rounded-[100px]"
         ></motion.div>
       </ContentsWrapper>
+
+      <div id="stack-section" />
       <div className="relative overflow-hidden w-full h-[180px]">
         <motion.div
           className="absolute h-full flex items-center gap-5 pr-5 whitespace-nowrap text-7xl text-right bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
@@ -177,6 +179,7 @@ export default function StudySection() {
         ></motion.div>
       </ContentsWrapper>
 
+      <div id="study-section" />
       <ContentsWrapper>
         <div className="flex flex-col gap-10 py-16">
           <div className="flex gap-16 items-end justify-between">
@@ -188,15 +191,11 @@ export default function StudySection() {
               >
                 <span className="opacity-20">READ</span>
               </motion.h2>
-              <motion.h3
-                className="text-4xl flex flex-col"
-                initial={{ scaleY: 0 }}
-                animate={{ scaleY: isInView ? 1 : 0 }}
-              >
+              <h3 className="text-4xl flex flex-col">
                 <strong className="opacity-40">BOOKS</strong>
                 <strong className="opacity-60">ARTICLES</strong>
                 <strong className="opacity-90">DOCUMENTATION</strong>
-              </motion.h3>
+              </h3>
             </div>
             <div className="flex-1">
               <p className="text-3xl mb-2">

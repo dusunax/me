@@ -6,7 +6,9 @@ export default function ContentsWrapper({
   className?: string;
 }) {
   return (
-    <div className={`relative w-full max-w-screen-2xl mx-auto ${className}`}>
+    <div
+      className={`relative w-full max-w-screen-2xl mx-auto px-10 ${className}`}
+    >
       {children}
     </div>
   );

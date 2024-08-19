@@ -15,7 +15,8 @@ export const STUDY_CONTENT: StudyContent[] = [
     title: "모던 자바스크립트 딥 다이브",
     orignalTitle: "Modern JavaScript Deep Dive",
     subtitle: "자바스크립트의 핵심 개념과 동작 원리",
-    description: "The book is about modern JavaScript.",
+    description:
+      "The book is about modern JavaScript. Study with friends in every Saturday at FigJam.",
     duration: "2023.09.09 - 2023.12.30",
     type: "book",
     images: ["/book-1.png"],
@@ -26,7 +27,8 @@ export const STUDY_CONTENT: StudyContent[] = [
     title: "모던 리액트 딥 다이브",
     orignalTitle: "Modern React Deep Dive",
     subtitle: "리액트의 핵심 개념과 동작 원리",
-    description: "The book is about modern React.",
+    description:
+      "The book is about modern React. It is a part of monthly-cs study. Study with 10 people in every Sunday at Seoul.",
     duration: "2024.03.04 - 2024.04.28",
     type: "book",
     images: ["/book-2.png"],
@@ -37,7 +39,8 @@ export const STUDY_CONTENT: StudyContent[] = [
     title: "이펙티브 타입스크립트",
     orignalTitle: "Effective TypeScript",
     subtitle: "타입스크립트의 동작 원리의 이해와 구체적인 조언 62가지",
-    description: "The book is about effective TypeScript.",
+    description:
+      "The book is about effective TypeScript. It is a part of monthly-cs study. Study with 9 people in every Sunday at Seoul.",
     duration: "2024.05.12 - 2024.06.30",
     type: "book",
     images: ["/book-3.png"],
@@ -48,7 +51,7 @@ export const STUDY_CONTENT: StudyContent[] = [
     title: "개발자 온보딩 가이드",
     orignalTitle: "The Missing Readme",
     subtitle: "개발자 온보딩 가이드",
-    description: "The book is about developer onboarding guide.",
+    description: "The book for junior developers. Reading by myself, ongoing.",
     duration: "2024.08 -",
     type: "book",
     isFinished: false,
