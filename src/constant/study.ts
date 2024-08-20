@@ -50,7 +50,7 @@ export const STUDY_CONTENT: StudyContent[] = [
   {
     title: "개발자 온보딩 가이드",
     orignalTitle: "The Missing Readme",
-    subtitle: "개발자 온보딩 가이드",
+    subtitle: "좋은 개발자로 성장하기 위한 가이드",
     description: "The book for junior developers. Reading by myself, ongoing.",
     duration: "2024.08 -",
     type: "book",

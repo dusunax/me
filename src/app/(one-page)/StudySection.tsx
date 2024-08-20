@@ -1,6 +1,5 @@
 "use client";
 import { useRef, useState } from "react";
-import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import ContentsWrapper from "../../components/ContentsWrapper";
 import StudyCanvas from "../../components/StudyCanvas";
@@ -64,9 +63,10 @@ export default function StudySection() {
 
           <div className="w-1/2 flex flex-col gap-6">
             <p className="text-3xl text-right">
-              I&apos;ve been working as a software developer for 1 year and 7
-              months and developed 2 services since december 2022. I&apos;m
-              currently looking for a new job opportunity.
+              I&apos;ve been working as a software developer <br />
+              for 1 year and 7 months and <br />
+              developed 2 services since december 2022.
+              <br /> I&apos;m currently looking for a new job opportunity.
             </p>
             <ul className="text-xl pl-2">
               <li>
@@ -145,14 +145,18 @@ export default function StudySection() {
           <div className="w-2/3 flex flex-col gap-4">
             <p className="text-3xl">
               <strong>I made this homepage with above skills.</strong>
-              <br /> Sometimes use vanilla Javascript for quick prototyping, but
-              mostly use React & Typescript. Do write Python code if needed, and
-              use Node.js for backend.
+              <br /> Sometimes use vanilla Javascript for quick prototyping,{" "}
+              <br />
+              but mostly use React & Typescript. Do write Python code if needed,
+              and use Node.js for backend.
             </p>
             <p className="text-xl">
               I do have based on Web Publishing and Computer Graphics, major in
-              Formative Illustration. I&apos;m interested in 3D Graphics and
-              Interactive Web Development.
+              Formative Illustration. <br />
+              I&apos;m interested in 3D Graphics and Interactive Web
+              Development.
+              <br />I want to keep building a service that works, efficient, and
+              beautiful. (and fun!)
             </p>
             <div className="flex gap-2">
               {STACKS.map((stack) => (

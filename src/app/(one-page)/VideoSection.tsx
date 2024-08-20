@@ -73,6 +73,7 @@ export default function VideoSection() {
     "/video-3.mp4",
     "/video-4.mp4",
     "/video-5.mp4",
+    "/video-6.mp4",
   ];
 
   return (
