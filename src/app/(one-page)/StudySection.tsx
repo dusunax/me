@@ -46,8 +46,8 @@ export default function StudySection() {
             </motion.h2>
             <motion.ul
               className="flex gap-4"
-              initial={{ scaleY: 0 }}
-              animate={{ scaleY: isInView ? 1 : 0 }}
+              initial={{ opacity: 0.2 }}
+              animate={{ opacity: isInView ? 1 : 0.2 }}
             >
               <li>
                 <span className="text-8xl">2</span>
@@ -64,22 +64,39 @@ export default function StudySection() {
           <div className="w-1/2 flex flex-col gap-6">
             <p className="text-3xl text-right">
               I&apos;ve been working as a software developer <br />
-              for 1 year and 7 months and <br />
-              developed 2 services since december 2022.
-              <br /> I&apos;m currently looking for a new job opportunity.
+              since 2022, for 1 year and 7 months <br />
+              and developed 2 services from scratch.
+              <br />
+              Currently looking for a new job opportunity.
             </p>
-            <ul className="text-xl pl-2">
+            <ul className="text-xl pl-2 flex flex-col gap-2">
               <li>
-                <strong>Service 1:</strong> Education Service for Free Online
-                Courses and Video Contents. Collects and analyzes educational
-                data&apos;s metadata to provide personalized learning
-                experiences.
+                <strong>Service 1:</strong> 2022.12-2023.06
+                <br />
+                <div className="indent-4">
+                  <i>
+                    Education Service for Free Online Courses and Video
+                    Contents.
+                  </i>
+                </div>
+                <div className="indent-4">
+                  Collects and analyzes educational data&apos;s metadata to
+                  provide personalized learning experiences.
+                </div>
               </li>
               <li>
-                <strong>Service 2:</strong> Medical Service for Online Medical
-                Media Contents Sharing. Provides medical 3D contents and
-                ordering system for dental prostheses. It&apos;s a platform for
-                dentists and dental technicians and help them to communicate.
+                <strong>Service 2:</strong> 2023.07-2024.07
+                <br />
+                <div className="indent-4">
+                  <i>
+                    Medical Service for Online Medical Media Contents Sharing.
+                  </i>
+                </div>
+                <div className="indent-4">
+                  Provides medical 3D contents and ordering system for dental
+                  prostheses. It&apos;s a platform for dentists and dental
+                  technicians and help them to communicate.
+                </div>
               </li>
             </ul>
           </div>

@@ -6,18 +6,11 @@ import StudySection from "./(one-page)/StudySection";
 import Footer from "./(one-page)/Footer";
 
 export default function Home() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <>
       <CustomCursor />
       <div id="top" />
-      <main className="flex min-h-screen flex-col justify-between bg-[#9e8c86]">
+      <main className="flex min-h-screen flex-col justify-between bg-[#9e8c86] cursor-none overflow-hidden">
         <Header />
         <div id="video-section" />
         <VideoSection />

@@ -13,7 +13,7 @@ export default function Header() {
   const moveY3 = useTransform(scrollYProgress, [0, 1], [0, -1200]);
 
   return (
-    <header className="relative px-20 pt-8 h-[80vh] bg-white cursor-none">
+    <header className="relative px-20 pt-8 h-[80vh] bg-white">
       <ContentsWrapper className="h-full flex flex-col justify-between">
         <div className="flex-1">
           <div className="w-[11rem] sticky top-0 py-10 z-10">

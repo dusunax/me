@@ -26,7 +26,7 @@ export default function Footer() {
             whileTap={{ opacity: 0.4 }}
             onClick={() => scrollToSection("top")}
           >
-            Top
+            <button>Top</button>
           </motion.li>
           <motion.li
             className="cursor-pointer"
@@ -34,7 +34,7 @@ export default function Footer() {
             whileTap={{ opacity: 0.4 }}
             onClick={() => scrollToSection("video-section")}
           >
-            Youtube
+            <button>Youtube</button>
           </motion.li>
           <motion.li
             className="cursor-pointer"
@@ -42,7 +42,7 @@ export default function Footer() {
             whileTap={{ opacity: 0.4 }}
             onClick={() => scrollToSection("stack-section")}
           >
-            Skill
+            <button>Skill</button>
           </motion.li>
           <motion.li
             className="cursor-pointer"
@@ -50,7 +50,7 @@ export default function Footer() {
             whileTap={{ opacity: 0.4 }}
             onClick={() => scrollToSection("study-section")}
           >
-            Study
+            <button>Study</button>
           </motion.li>
         </ul>
 
