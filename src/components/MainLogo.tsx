@@ -51,6 +51,7 @@ export default function MainLogo({ fontSize }: { fontSize: number }) {
               alt="Dusunax"
               fill
               className="select-none pointer-events-none"
+              priority
             />
           </motion.div>
         </motion.div>
