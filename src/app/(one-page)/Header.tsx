@@ -2,7 +2,10 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import { Canvas } from "@react-three/fiber";
 import ContentsWrapper from "src/packages/components/ContentsWrapper";
+import { Text } from "@react-three/drei";
+import WordCloud from "src/packages/components/WordCloud";
 
 export default function Header() {
   const ref = useRef(null);
@@ -14,6 +17,10 @@ export default function Header() {
 
   return (
     <header className="relative px-20 pt-8 h-[80vh] bg-white">
+      <div className="absolute left-0 top-0 w-full h-full">
+        <WordCloud />
+      </div>
+
       <ContentsWrapper className="h-full flex flex-col justify-between">
         <div className="flex-1">
           <div className="w-[11rem] sticky top-0 py-10 z-10">
