@@ -2,9 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
-import { Canvas } from "@react-three/fiber";
 import ContentsWrapper from "src/packages/components/ContentsWrapper";
-import { Text } from "@react-three/drei";
 import WordCloud from "src/packages/components/WordCloud";
 
 export default function Header() {
@@ -16,10 +14,15 @@ export default function Header() {
   const moveY3 = useTransform(scrollYProgress, [0, 1], [0, -1200]);
 
   return (
-    <header className="relative px-20 pt-8 h-[80vh] bg-white">
-      <div className="absolute left-0 top-0 w-full h-full">
+    <header className="relative px-20 pt-8 h-[90vh] bg-white">
+      <motion.div
+        className="absolute left-0 top-0 w-full h-full"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.2 }}
+      >
         <WordCloud />
-      </div>
+      </motion.div>
 
       <ContentsWrapper className="h-full flex flex-col justify-between">
         <div className="flex-1">
@@ -72,9 +75,6 @@ export default function Header() {
             style={{ y: moveY1 }}
             className="absolute w-40 h-40 rounded-full bg-[#decec7] right-20 -top-20 z-1 shadow-[0_0_40px_40px_#decec7] z-1"
           ></motion.div>
-          <p className="relative pl-16 text-9xl text-right bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-            SOFTWARE DEVELOPER
-          </p>
 
           <motion.div
             initial={{ bottom: -170 }}
