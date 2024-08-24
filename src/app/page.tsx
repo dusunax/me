@@ -4,6 +4,7 @@ import Header from "./(one-page)/Header";
 import VideoSection from "./(one-page)/VideoSection";
 import StudySection from "./(one-page)/StudySection";
 import Footer from "./(one-page)/Footer";
+import ScreenLoading from "../components/ScreenLoading";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <CustomCursor />
       <div id="top" />
       <main className="flex min-h-screen flex-col justify-between bg-[#9e8c86] cursor-none overflow-hidden">
+        <ScreenLoading />
         <Header />
         <div id="video-section" />
         <VideoSection />

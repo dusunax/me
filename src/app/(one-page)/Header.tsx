@@ -1,8 +1,8 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
 import { useRef } from "react";
 import ContentsWrapper from "src/packages/components/ContentsWrapper";
+import MainLogo from "src/packages/components/MainLogo";
 import WordCloud from "src/packages/components/WordCloud";
 
 export default function Header() {
@@ -25,47 +25,9 @@ export default function Header() {
       </motion.div>
 
       <ContentsWrapper className="h-full flex flex-col justify-between">
-        <div className="flex-1">
-          <div className="w-[11rem] sticky top-0 py-10 z-10">
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="absolute w-7 h-7 rounded-full bg-[#b6a79d] right-0 -mt-2 z-1"
-            ></motion.div>
-            <h1 className="text-4xl font-bold flex items-center">
-              Sun A Du ・ Dusunax
-            </h1>
-            <motion.div
-              className="rounded-full w-[100px] h-[100px] absolute top-8 right-0 translate-x-full overflow-hidden"
-              initial={{ x: 50, scale: 0.9 }}
-              animate={{ x: 75, scale: 1 }}
-              transition={{ duration: 0.4 }}
-            >
-              <Image
-                src="/profile.png"
-                alt="Dusunax"
-                width={100}
-                height={100}
-              />
-            </motion.div>
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.1, delay: 0.3 }}
-              className="absolute w-4 h-4 rounded-full bg-[#d0beb7] -right-20 bottom-6 z-1"
-            ></motion.div>
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.1, delay: 0.4 }}
-              className="absolute w-2 h-2 rounded-full bg-[#d0beb7] -right-16 bottom-4 z-1"
-            ></motion.div>
-            <div className="absolute top-0 w-full py-10">
-              <h1 className="text-4xl font-bold mix-blend-overlay text-white flex items-center">
-                Sun A Du ・ Dusunax
-              </h1>
-            </div>
+        <div className="flex-1 flex">
+          <div className="sticky top-0 z-10 py-10">
+            <MainLogo fontSize={50} />
           </div>
         </div>
 
