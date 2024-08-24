@@ -92,7 +92,7 @@ function MainText({
 }) {
   return (
     <h1
-      className={`text-4xl text-[#222222] font-bold leading-none flex items-center ${className}`}
+      className={`text-4xl text-[#222222] font-bold leading-none flex items-center select-none ${className}`}
       style={{ fontSize: `${fontSize}px` }}
     >
       Sun A Du <br />・ Dusunax
