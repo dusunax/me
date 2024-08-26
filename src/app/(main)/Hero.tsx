@@ -1,11 +1,12 @@
 "use client";
+import { CaretDownIcon } from "@radix-ui/react-icons";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import ContentsWrapper from "src/packages/components/ContentsWrapper";
 import MainLogo from "src/packages/components/MainLogo";
 import WordCloud from "src/packages/components/WordCloud";
 
-export default function Header() {
+export default function Hero({ goNextSection }: { goNextSection: () => void }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
 
@@ -56,12 +57,21 @@ export default function Header() {
             style={{ y: moveY3 }}
             className="absolute w-24 h-24 rounded-full bg-primary-400 left-0 bottom-20 z-1 shadow-[0_0_16px_20px_#d0beb7]"
           ></motion.div>
-          <motion.hr
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            className="mt-4 mb-10 y-1 border-primary-600"
-          />
         </div>
+
+        <motion.div
+          className="absolute left-0 bottom-4 w-full text-center z-20"
+          whileHover={{
+            scale: 1.2,
+            y: 10,
+          }}
+          whileTap={{ scale: 0.9 }}
+          onClick={goNextSection}
+        >
+          <button className="flex justify-center w-full text-center">
+            <CaretDownIcon width={80} height={80} color={"#b6a79d"} />
+          </button>
+        </motion.div>
       </ContentsWrapper>
     </header>
   );

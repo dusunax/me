@@ -49,7 +49,7 @@ export default function SkillSection() {
         </motion.div>
       </div>
 
-      <ContentsWrapper className="my-20">
+      <ContentsWrapper className="pb-20">
         <div className="flex justify-between gap-10">
           <motion.h2
             className="text-9xl"

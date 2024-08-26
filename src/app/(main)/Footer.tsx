@@ -8,47 +8,46 @@ import {
 import { motion } from "framer-motion";
 import ContentsWrapper from "../../components/ContentsWrapper";
 
-export default function Footer() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+interface Props {
+  scrollToSection: (sectionId: string) => void;
+}
+export default function Footer({ scrollToSection }: Props) {
   return (
     <footer className="h-[70vh] bg-[#78655f] text-white">
       <ContentsWrapper className="h-full justify-between flex flex-col pt-20 pb-12">
         <ul className="flex-1 flex flex-col gap-2 text-5xl">
           <motion.li
-            className=" cursor-pointer"
             whileHover={{ opacity: 0.7 }}
             whileTap={{ opacity: 0.4 }}
-            onClick={() => scrollToSection("top")}
+            onClick={() => scrollToSection("hero")}
           >
             <button>Top</button>
           </motion.li>
           <motion.li
-            className="cursor-pointer"
             whileHover={{ opacity: 0.7 }}
             whileTap={{ opacity: 0.4 }}
-            onClick={() => scrollToSection("video-section")}
+            onClick={() => scrollToSection("video")}
           >
-            <button>Youtube</button>
+            <button>Video</button>
           </motion.li>
           <motion.li
-            className="cursor-pointer"
             whileHover={{ opacity: 0.7 }}
             whileTap={{ opacity: 0.4 }}
-            onClick={() => scrollToSection("stack-section")}
+            onClick={() => scrollToSection("work")}
+          >
+            <button>Work</button>
+          </motion.li>
+          <motion.li
+            whileHover={{ opacity: 0.7 }}
+            whileTap={{ opacity: 0.4 }}
+            onClick={() => scrollToSection("skill")}
           >
             <button>Skill</button>
           </motion.li>
           <motion.li
-            className="cursor-pointer"
             whileHover={{ opacity: 0.7 }}
             whileTap={{ opacity: 0.4 }}
-            onClick={() => scrollToSection("study-section")}
+            onClick={() => scrollToSection("study")}
           >
             <button>Study</button>
           </motion.li>

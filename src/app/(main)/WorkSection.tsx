@@ -10,7 +10,7 @@ export default function WorkSection() {
   return (
     <section className="relative flex flex-col w-full bg-white py-24">
       <div id="work-section" />
-      <ContentsWrapper className="mb-20">
+      <ContentsWrapper className="pb-20">
         <div className="flex justify-between gap-4">
           <div className="flex flex-col justify-between">
             <motion.h2
