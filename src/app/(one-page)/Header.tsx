@@ -35,7 +35,7 @@ export default function Header() {
           <motion.div
             transition={{ duration: 0.1, delay: 0.4 }}
             style={{ y: moveY1 }}
-            className="absolute w-40 h-40 rounded-full bg-[#decec7] right-20 -top-20 z-1 shadow-[0_0_40px_40px_#decec7] z-1"
+            className="absolute w-40 h-40 rounded-full bg-primary-300 right-20 -top-20 z-1 shadow-[0_0_40px_40px_#decec7] z-1"
           ></motion.div>
 
           <motion.div
@@ -49,17 +49,17 @@ export default function Header() {
               duration: 2,
             }}
             style={{ y: moveY2 }}
-            className="absolute w-60 h-60 rounded-full bg-[#d0beb7] -right-16 translate-y-full z-1 shadow-[0_0_8px_20px_#d0beb7]"
+            className="absolute w-60 h-60 rounded-full bg-primary-400 -right-16 translate-y-full z-1 shadow-[0_0_8px_20px_#d0beb7]"
           ></motion.div>
           <motion.div
             transition={{ duration: 0.1, delay: 0.4 }}
             style={{ y: moveY3 }}
-            className="absolute w-24 h-24 rounded-full bg-[#d0beb7] left-0 bottom-20 z-1 shadow-[0_0_16px_20px_#d0beb7]"
+            className="absolute w-24 h-24 rounded-full bg-primary-400 left-0 bottom-20 z-1 shadow-[0_0_16px_20px_#d0beb7]"
           ></motion.div>
           <motion.hr
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            className="mt-4 mb-10 y-1 border-[#d0beb7]"
+            className="mt-4 mb-10 y-1 border-primary-600"
           />
         </div>
       </ContentsWrapper>

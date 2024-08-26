@@ -88,7 +88,7 @@ export default function VideoSection() {
             scale: isScrollingEnabled ? 1 : 0.95,
             backgroundColor: isScrollingEnabled
               ? "rgb(34,34,34)"
-              : "rgba(0,0,0,0)",
+              : "rgba(0,0,0,0.5)",
           }}
         >
           <FilmPerforations />

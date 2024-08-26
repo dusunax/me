@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <CustomCursor />
       <div id="top" />
-      <main className="flex min-h-screen flex-col justify-between bg-[#9e8c86] cursor-none overflow-hidden">
+      <main className="flex min-h-screen flex-col justify-between bg-primary-600 cursor-none overflow-hidden">
         <ScreenLoading />
         <Header />
         <div id="video-section" />

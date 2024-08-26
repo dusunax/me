@@ -106,7 +106,7 @@ export default function StudySection() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: isInView ? 1.05 : 0 }}
           transition={{ type: "spring", duration: 1 }}
-          className="h-10 my-4 border-t-0 border-l-0 border-r-0 border-2 border-[#d0beb7] rounded-[100px]"
+          className="h-10 my-4 border-t-0 border-l-0 border-r-0 border-2 border-primary-600 rounded-[100px]"
         ></motion.div>
       </ContentsWrapper>
 
@@ -198,7 +198,7 @@ export default function StudySection() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: isInView ? 1.05 : 0 }}
           transition={{ type: "spring", duration: 1 }}
-          className="h-10 my-4 border-t-0 border-l-0 border-r-0 border-2 border-[#d0beb7] rounded-[100px]"
+          className="h-10 my-4 border-t-0 border-l-0 border-r-0 border-2 border-primary-600 rounded-[100px]"
         ></motion.div>
       </ContentsWrapper>
 
@@ -240,7 +240,7 @@ export default function StudySection() {
               prevContent={prevContent}
               changeContentIndex={changeContentIndex}
             />
-            <div className="w-full max-h-[600px] h-[60vh] bg-[#d0beb7] rounded-xl">
+            <div className="w-full max-h-[600px] h-[60vh] bg-primary-400 rounded-xl">
               <StudyCanvas content={STUDY_CONTENT[currentContent]} />
             </div>
           </div>

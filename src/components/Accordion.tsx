@@ -34,12 +34,12 @@ export default function Accordion({
                   : "48px",
               backgroundColor:
                 content.title === contents[currentContent].title
-                  ? "#d0beb8"
+                  ? "#d0beb7"
                   : "#ffffff",
             }}
             initial={{ height: "48px" }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            whileHover={{ backgroundColor: "#d0beb8" }}
+            whileHover={{ backgroundColor: "#d0beb7" }}
           >
             <div className="flex gap-2 items-center">
               <h4 className="text-xl h-12 shrink-0 flex items-center">

@@ -43,7 +43,7 @@ export default function MainLogo({ fontSize }: { fontSize: number }) {
             }}
           />
           <motion.div
-            className="absolute w-full h-full rounded-full overflow-hidden z-1"
+            className="absolute w-full h-full rounded-full overflow-hidden z-1 bg-primary"
             whileTap={{ scale: 1.1, boxShadow: "0 0 16px 8px rgba(0,0,0,0.1)" }}
           >
             <Image
@@ -76,7 +76,7 @@ interface MotionCircleProps extends HTMLMotionProps<"div"> {
 function MotionCircle({ className, ...props }: MotionCircleProps) {
   return (
     <motion.div
-      className={`absolute rounded-full bg-[#b6a79d] ${className}`}
+      className={`absolute rounded-full bg-primary-500 ${className}`}
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       {...props}
