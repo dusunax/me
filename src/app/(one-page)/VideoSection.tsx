@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import FilmPerforations from "src/packages/components/FilmPerforations";
 import ContentsWrapper from "src/packages/components/ContentsWrapper";
 import YoutubeButton from "src/packages/components/YoutubeButton";
+import CurvedBackground from "src/packages/components/CurvedBackground";
 
 export default function VideoSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -77,7 +78,8 @@ export default function VideoSection() {
   ];
 
   return (
-    <section className="relative h-[40vh] rounded-xl px-10 mt-24">
+    <section className="relative h-[40vh] rounded-xl px-10 mt-24 pb-20">
+      <CurvedBackground backgroundColor="#ffffff" direction="bottom" />
       <ContentsWrapper className="h-full">
         <motion.div
           ref={videoSectionRef}

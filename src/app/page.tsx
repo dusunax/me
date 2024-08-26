@@ -5,6 +5,8 @@ import VideoSection from "./(one-page)/VideoSection";
 import StudySection from "./(one-page)/StudySection";
 import Footer from "./(one-page)/Footer";
 import ScreenLoading from "../components/ScreenLoading";
+import WorkSection from "./(one-page)/WorkSection";
+import SkillSection from "./(one-page)/SkillSection";
 
 export default function Home() {
   return (
@@ -16,19 +18,9 @@ export default function Home() {
         <Header />
         <div id="video-section" />
         <VideoSection />
+        <WorkSection />
+        <SkillSection />
         <StudySection />
-
-        {/* Horizontal Scroll */}
-        {/* <section className="flex flex-col items-center w-full border border-red-500">
-          <h2 className="text-2xl font-bold">About Me</h2>
-          <ul>
-            <li>Creator</li>
-            <li>Developer</li>
-            <li>Coworker</li>
-            <li>Runner</li>
-            <li>Traveler</li>
-          </ul>
-        </section> */}
 
         <Footer />
       </main>
