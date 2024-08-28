@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "475px",
+      },
+      fontSize: {
+        md: "1rem",
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
       colors: {
         primary: "#b6a79d",
         "primary-300": "#decec7",

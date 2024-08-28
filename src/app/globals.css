@@ -42,3 +42,19 @@ body {
     scrollbar-width: none; /* Firefox */
   }
 }
+
+.heading-2xl {
+  @apply text-5xl sm:text-7xl md:text-9xl;
+}
+
+.heading-xl {
+  @apply text-3xl sm:text-5xl md:text-8xl;
+}
+
+.heading-md {
+  @apply xs:text-lg sm:text-2xl md:text-3xl;
+}
+
+.font-size-md {
+  @apply xs:text-sm sm:text-md md:text-lg;
+}

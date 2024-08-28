@@ -12,6 +12,7 @@ export default function MainLogo({ fontSize }: { fontSize: number }) {
           initial={{ x: fontSize * 0.9, scale: 0.8 }}
           animate={{ x: fontSize * 1.5, scale: 1 }}
           transition={{ duration: 0.4 }}
+          whileHover={{ scale: 1.1 }}
           style={{ width: `${fontSize * 2}px`, height: `${fontSize * 2}px` }}
           drag
         >
