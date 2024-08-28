@@ -56,5 +56,5 @@ body {
 }
 
 .font-size-md {
-  @apply xs:text-sm sm:text-md md:text-lg;
+  @apply text-xs sm:text-md md:text-lg leading-normal;
 }

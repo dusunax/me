@@ -32,7 +32,7 @@ export default function StudySection() {
   return (
     <section className="bg-white">
       <div id="study-section" />
-      <ContentsWrapper className="pb-20">
+      <ContentsWrapper>
         <div className="flex flex-col gap-10 py-16">
           <div className="flex gap-16 items-end justify-between">
             <div className="flex gap-8 items-end">

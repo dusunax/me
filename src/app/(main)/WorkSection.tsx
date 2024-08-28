@@ -9,10 +9,9 @@ export default function WorkSection() {
   const isInView = useInView(ref);
 
   return (
-    <section className="relative flex flex-col w-full bg-white py-24">
-      <div id="work-section" />
-      <ContentsWrapper className="pb-20">
-        <div className="flex flex-col lg:flex-row justify-between gap-y-4">
+    <section className="relative flex flex-col w-full bg-white py-10 sm:py-20 md:py-32">
+      <ContentsWrapper>
+        <div className="flex flex-col xl:flex-row justify-between gap-y-4">
           <div className="flex flex-col justify-between gap-y-4 gap-x-6">
             <motion.h2
               className="heading-2xl"
@@ -38,14 +37,14 @@ export default function WorkSection() {
             </motion.ul>
           </div>
 
-          <div className="lg:w-1/2 flex flex-col gap-6">
+          <div className="xl:w-1/2 flex flex-col gap-6">
             <p className="heading-md text-right">
               I&apos;ve been working as a software developer{" "}
               <ResponsiveBreak showOn="sm" />
-              since 2022, for 1 year and 7 months I&apos;ve been working as a
-              software developer <ResponsiveBreak showOn="sm" />
-              and developed 2 services from scratch. I&apos;ve been working as a
-              software developer <ResponsiveBreak showOn="sm" />
+              since 2022, for 1 year and 7 months
+              <ResponsiveBreak showOn="sm" />
+              and developed 2 services from scratch.
+              <ResponsiveBreak showOn="sm" />
               Currently looking for a new job opportunity.
             </p>
             <ul className="font-size-md pl-2 flex flex-col gap-2">
@@ -85,7 +84,7 @@ export default function WorkSection() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: isInView ? 1.05 : 0 }}
           transition={{ type: "spring", duration: 1 }}
-          className="h-10 my-4 border-t-0 border-l-0 border-r-0 border-2 border-primary-600 rounded-[100px]"
+          className="h-10 my-4 lg:mx-4 border-t-0 border-l-0 border-r-0 border-2 border-primary-600 rounded-[100px]"
         ></motion.div>
       </ContentsWrapper>
     </section>
