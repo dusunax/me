@@ -1,9 +1,12 @@
 "use client";
 import { Vector3, Color, Group, Spherical } from "three";
 import { useRef, useState, useMemo, Suspense } from "react";
+import { useTransform } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Billboard, Html, OrbitControls, Text } from "@react-three/drei";
+import { Billboard, Html, Text } from "@react-three/drei";
 import { getRandomWord } from "../constant/words";
+import { MotionValue } from "framer-motion";
+import { degreesToRadians } from "popmotion";
 
 function Word({
   word,
@@ -83,13 +86,45 @@ function Cloud({ count = 4, radius = 20 }) {
   );
 }
 
-export default function WordCloud() {
+export default function WordCloud({
+  scrollYProgress,
+}: {
+  scrollYProgress: MotionValue<number>;
+}) {
   return (
     <Canvas
       dpr={[1, 2]}
       camera={{ position: [0, 0, 35], fov: 90 }}
       className="absolute z-10"
     >
+      <WordCloudContent scrollYProgress={scrollYProgress} />
+    </Canvas>
+  );
+}
+
+const WordCloudContent = ({
+  scrollYProgress,
+}: {
+  scrollYProgress: MotionValue<number>;
+}) => {
+  const xAngle = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, degreesToRadians(360)]
+  );
+  const yAngle = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, degreesToRadians(60)]
+  );
+
+  useFrame(({ camera }) => {
+    camera.rotation.x = xAngle.get();
+    camera.rotation.y = yAngle.get();
+  });
+
+  return (
+    <>
       <fog attach="fog" args={["#ffffff", 0, 65]} />
       <Suspense fallback={null}>
         <group rotation={[10, 10.5, 10]}>
@@ -103,8 +138,7 @@ export default function WordCloud() {
             DEVELOPER
           </p>
         </Html>
-        <OrbitControls enableZoom={false} />
       </Suspense>
-    </Canvas>
+    </>
   );
-}
+};

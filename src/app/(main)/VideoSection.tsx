@@ -78,8 +78,8 @@ export default function VideoSection() {
   ];
 
   return (
-    <section className="relative h-[40vh] rounded-xl px-10 mt-24 pb-20">
-      <CurvedBackground backgroundColor="#ffffff" direction="bottom" />
+    <section className="relative h-[80vh] px-10 pt-24 pb-20 bg-primary-600">
+      <CurvedBackground backgroundColor="#ffffff" direction="top" reverse />
       <ContentsWrapper className="h-full">
         <motion.div
           ref={videoSectionRef}

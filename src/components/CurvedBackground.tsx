@@ -3,21 +3,23 @@ import { motion } from "framer-motion";
 
 type CurvedBackgroundProps = {
   direction?: "top" | "bottom";
+  reverse?: boolean;
   backgroundColor?: string;
 };
 
 export default function CurvedBackground({
   direction = "bottom",
   backgroundColor = "#d0beb7",
+  reverse = false,
 }: CurvedBackgroundProps) {
   const isTop = direction === "top";
 
   return (
     <div
-      className={`mt-1 absolute w-full scale-y-[30%] ${
+      className={`absolute w-full left-0 scale-y-[40%] ${
         isTop ? "top-0 -translate-y-full" : "bottom-0"
-      } left-0 w-full`}
-      style={{ backgroundColor }}
+      } ${reverse ? "-mt-1" : "mt-1"}`}
+      style={{ backgroundColor, transform: reverse ? "scaleY(-0.4)" : "" }}
     >
       <motion.div
         className="absolute w-[200vw] bottom-0 opacity-50 flex"

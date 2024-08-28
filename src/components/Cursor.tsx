@@ -43,7 +43,7 @@ export default function CustomCursor() {
   return (
     <motion.div
       className="fixed top-0 left-0 rounded-full pointer-events-none bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mix-blend-multiply z-[100]"
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0, x: -cursorSize, y: -cursorSize }}
       animate={{
         opacity: isHovering ? 0.5 : 1,
         x: mousePosition.x - cursorSize / 2,
