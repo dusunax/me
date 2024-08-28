@@ -93,10 +93,11 @@ function MainText({
 }) {
   return (
     <h1
-      className={`text-4xl text-[#222222] font-bold leading-none flex items-center select-none ${className}`}
+      className={`flex flex-col text-4xl text-[#222222] font-bold leading-none select-none ${className}`}
       style={{ fontSize: `${fontSize}px` }}
     >
-      Sun A Du <br />・ Dusunax
+      <span className="text-nowrap">Sun A Du</span>
+      <span className="text-nowrap">・ Dusunax</span>
     </h1>
   );
 }

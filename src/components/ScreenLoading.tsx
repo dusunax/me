@@ -12,7 +12,7 @@ export default function ScreenLoading() {
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="-ml-[100px]"
+          className="-ml-[10vw] md:-ml-[100px] scale-[30%]  sm:scale-50 md:scale-100"
           initial={{ filter: "blur(10px)" }}
           animate={{ filter: "blur(0px)" }}
           transition={{ delay: 0, duration: 0.4 }}

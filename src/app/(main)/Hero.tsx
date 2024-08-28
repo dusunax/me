@@ -26,8 +26,8 @@ export default function Hero({ goNextSection }: { goNextSection: () => void }) {
       </motion.div>
 
       <ContentsWrapper className="h-full flex flex-col justify-between">
-        <div className="flex-1 flex">
-          <div className="sticky top-0 z-10 py-10">
+        <div className="flex-1 flex justify-center sm:justify-start">
+          <div className="sticky top-0 z-10 py-10 scale-[60%] sm:scale-100 origin-top">
             <MainLogo fontSize={50} />
           </div>
         </div>
