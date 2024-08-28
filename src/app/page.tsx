@@ -1,7 +1,6 @@
 "use client";
 import { useRef } from "react";
 import { useScroll } from "../hooks/useScroll";
-import CustomCursor from "../components/Cursor";
 import ScreenLoading from "../components/ScreenLoading";
 import ScrollControl from "../components/ScrollControl";
 import Hero from "./(main)/Hero";
@@ -10,6 +9,7 @@ import StudySection from "./(main)/StudySection";
 import Footer from "./(main)/Footer";
 import WorkSection from "./(main)/WorkSection";
 import SkillSection from "./(main)/SkillSection";
+import CustomCursorProvider from "../components/CustomCursorProvider";
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -32,8 +32,7 @@ export default function Home() {
     useScroll(sections);
 
   return (
-    <>
-      <CustomCursor />
+    <CustomCursorProvider>
       <ScreenLoading />
       <ScrollControl
         goNextSection={goNextSection}
@@ -62,6 +61,6 @@ export default function Home() {
           <Footer scrollToSection={scrollToSection} />
         </div>
       </main>
-    </>
+    </CustomCursorProvider>
   );
 }
