@@ -9,7 +9,7 @@ export default function WorkSection() {
   const isInView = useInView(ref);
 
   return (
-    <section className="relative flex flex-col w-full bg-white py-10 sm:py-20 md:py-32">
+    <section className="relative flex flex-col w-full py-10 sm:py-20 md:py-32">
       <ContentsWrapper>
         <div className="flex flex-col xl:flex-row justify-between gap-y-4">
           <div className="flex flex-col justify-between gap-y-4 gap-x-6">

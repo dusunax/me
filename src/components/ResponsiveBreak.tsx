@@ -7,7 +7,7 @@ interface ResponsiveBreakProps {
 export default function ResponsiveBreak({
   showOn = "sm",
 }: ResponsiveBreakProps) {
-  const classes = `hidden ${showOn} sm:block`;
+  const classes = `hidden ${showOn}:block`;
 
   return <br className={classes} />;
 }

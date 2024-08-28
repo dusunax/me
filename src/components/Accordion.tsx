@@ -18,7 +18,7 @@ export default function Accordion({
   changeContentIndex,
 }: AccordionProps) {
   return (
-    <div className="flex flex-col w-1/2">
+    <div className="flex flex-col xl:w-1/3 shrink-0">
       <Button onClick={prevContent}>Prev</Button>
 
       <ul className="w-full flex-1 overflow-y-scroll scrollbar-hide">
@@ -26,7 +26,7 @@ export default function Accordion({
           <motion.li
             key={index}
             onClick={() => changeContentIndex(index)}
-            className="overflow-hidden rounded-l-xl pl-8 pr-4 cursor-pointer flex flex-col gap-1"
+            className="overflow-hidden rounded-xl xl:rounded-r-none px-8 xl:pr-4 cursor-pointer flex flex-col gap-1"
             animate={{
               height:
                 content.title === contents[currentContent].title
@@ -42,7 +42,7 @@ export default function Accordion({
             whileHover={{ backgroundColor: "#d0beb7" }}
           >
             <div className="flex gap-2 items-center">
-              <h4 className="text-xl h-12 shrink-0 flex items-center">
+              <h4 className="font-size-xl h-12 shrink-0 flex items-center">
                 {content.title}
               </h4>
               {!content.isFinished && (
@@ -51,10 +51,10 @@ export default function Accordion({
                 </div>
               )}
             </div>
-            <strong className="text-sm">{content.subtitle}</strong>
+            <strong className="font-size-xs">{content.subtitle}</strong>
             {content.title === contents[currentContent].title && (
               <motion.div
-                className="text-sm"
+                className="font-size-xs"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
@@ -70,7 +70,7 @@ export default function Accordion({
                 <a
                   href={content.link}
                   target="_blank"
-                  className="text-sm text-blue-500 text-right underline"
+                  className="font-size-xs text-blue-500 text-right underline"
                 >
                   ...show more
                 </a>
@@ -100,7 +100,7 @@ function Button({
 
   return (
     <motion.button
-      className="relative p-4 m-4 font-bold rounded-full border"
+      className="relative p-1 sm:p-2 md:p-4 m-2 md:m-4 font-bold rounded-full border"
       onClick={onClick}
       animate={{ borderColor: isHovered ? "#ffffff" : "#222222" }}
       onHoverStart={() => setIsHovered(true)}
@@ -115,7 +115,7 @@ function Button({
         animate={isHovered ? "visible" : "hidden"}
       />
       <motion.span
-        className="relative z-10"
+        className="font-size-md relative z-10"
         animate={{ color: isHovered ? "#ffffff" : "#000000" }}
       >
         {children}
