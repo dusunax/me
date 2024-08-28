@@ -11,7 +11,7 @@ export default function Hero({ goNextSection }: { goNextSection: () => void }) {
   const { scrollYProgress } = useScroll({ target: ref });
 
   return (
-    <div className="relative px-20 pt-8 h-[90vh] bg-white shadow-xl z-10 rounded-b-2xl">
+    <div className="relative px-6 pt-6 h-[90vh] bg-white shadow-xl z-10 rounded-b-2xl">
       <motion.div
         className="absolute left-0 top-0 w-full h-full"
         initial={{ opacity: 0 }}
@@ -22,8 +22,8 @@ export default function Hero({ goNextSection }: { goNextSection: () => void }) {
       </motion.div>
 
       <ContentsWrapper className="h-full flex flex-col justify-between">
-        <div className="flex-1 flex justify-center sm:justify-start">
-          <div className="sticky top-0 z-10 sm:py-10 scale-[60%] sm:scale-100 origin-top-left">
+        <div className="relative flex-1 flex">
+          <div className="sticky h-1/2 top-0 z-10 -ml-10 sm:ml-0 sm:py-10 scale-[60%] sm:scale-100 origin-top-left">
             <MainLogo fontSize={50} />
           </div>
         </div>

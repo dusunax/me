@@ -64,10 +64,21 @@ export function useScroll(sections: Section[]) {
     const currentIndex = sections.findIndex(
       (section) => section.id === currentViewSection
     );
-    const nextIndex = (currentIndex + 1) % sections.length; // Loop back to the first section
+    const nextIndex = (currentIndex + 1) % sections.length;
     const nextSection = sections[nextIndex];
     if (nextSection) {
       scrollToSection(nextSection.id);
+    }
+  };
+
+  const goPrevSection = () => {
+    const currentIndex = sections.findIndex(
+      (section) => section.id === currentViewSection
+    );
+    const prevIndex = (currentIndex - 1 + sections.length) % sections.length;
+    const prevSection = sections[prevIndex];
+    if (prevSection) {
+      scrollToSection(prevSection.id);
     }
   };
 
@@ -75,6 +86,7 @@ export function useScroll(sections: Section[]) {
     currentViewSection,
     scrollToSection,
     goNextSection,
+    goPrevSection,
     isAtBottom,
     scrollProgress,
   };

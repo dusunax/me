@@ -110,12 +110,12 @@ const WordCloudContent = ({
   const xAngle = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, degreesToRadians(360)]
+    [0, degreesToRadians(30)]
   );
   const yAngle = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, degreesToRadians(60)]
+    [0, degreesToRadians(180)]
   );
 
   useFrame(({ camera }) => {
@@ -130,9 +130,14 @@ const WordCloudContent = ({
         <group rotation={[10, 10.5, 10]}>
           <Cloud count={12} radius={20} />
         </group>
+        <gridHelper
+          args={[100, 100]}
+          position={[0, -10, 0]}
+          rotation={[degreesToRadians(180), 0, 0]}
+        />
 
         <Html center>
-          <p className="text-7xl font-semibold break-words text-center bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent select-none pointer-events-none">
+          <p className="text-3xl sm:text-7xl leading-none font-semibold break-words text-center bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent select-none pointer-events-none">
             WEB <br />
             FRONTEND <br />
             DEVELOPER
