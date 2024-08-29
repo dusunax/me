@@ -21,7 +21,7 @@ export default function Accordion({
     <div className="flex flex-col xl:w-1/3 shrink-0">
       <Button onClick={prevContent}>Prev</Button>
 
-      <ul className="w-full flex-1 overflow-y-scroll scrollbar-hide">
+      <ul className="w-full flex-1 overflow-y-scroll scrollbar-hide -order-1 md:order-none">
         {contents.map((content, index) => (
           <motion.li
             key={index}
@@ -72,7 +72,7 @@ export default function Accordion({
                   target="_blank"
                   className="font-size-xs text-blue-500 text-right underline"
                 >
-                  ...show more
+                  ...study link
                 </a>
               )}
             </div>
@@ -105,6 +105,8 @@ function Button({
       animate={{ borderColor: isHovered ? "#ffffff" : "#222222" }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
+      onTouchStart={() => setIsHovered(true)}
+      onTouchEnd={() => setTimeout(() => setIsHovered(false), 400)}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >

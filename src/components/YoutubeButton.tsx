@@ -1,30 +1,37 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
 import Tooltip from "./ToolTip";
+import { useMobileStore } from "../store/useMobileStore";
 
 export default function YoutubeButton() {
   const [isHovered, setIsHovered] = useState(false);
+  const isMobile = useMobileStore((state) => state.isMobile);
 
   return (
-    <Link href="https://www.youtube.com/@dusunax" target="_blank">
-      <motion.div
-        onHoverStart={() => setIsHovered(true)}
-        onHoverEnd={() => setIsHovered(false)}
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95, rotate: 360 }}
-        transition={{ delay: 0.5 }}
-        className="w-32 h-32 rounded-full flex items-center justify-center px-5 py-3 bg-red-600 text-white cursor-pointer shadow-lg"
-      >
-        <YoutubeIcon />
-        {isHovered && (
-          <Tooltip text="Watch at Youtube Channel✨" className="w-40" />
-        )}
-      </motion.div>
-    </Link>
+    <div className="absolute right-1/2 translate-x-1/2 md:-right-4 md:translate-x-0 -bottom-4">
+      <Link href="https://www.youtube.com/@dusunax" target="_blank">
+        <motion.div
+          onHoverStart={() => !isMobile && setIsHovered(true)}
+          onHoverEnd={() => !isMobile && setIsHovered(false)}
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95, rotate: 360 }}
+          transition={{ delay: 0.5 }}
+          className="w-20 h-20 xl:w-32 xl:h-32 rounded-full flex items-center justify-center px-5 py-3 bg-red-600 text-white cursor-pointer shadow-lg"
+        >
+          <YoutubeIcon />
+          {(isHovered || isMobile) && (
+            <Tooltip
+              text="Watch at Youtube Channel✨"
+              className={`w-40 ${isMobile ? "" : ""}`}
+            />
+          )}
+        </motion.div>
+      </Link>
+    </div>
   );
 }
 

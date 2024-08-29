@@ -1,20 +1,14 @@
 "use client";
-import { useEffect, useState, ReactNode } from "react";
+import { ReactNode } from "react";
 import CustomCursor from "./Cursor";
+import { useMobileStore } from "../store/useMobileStore";
 
 export default function CustomCursorProvider({
   children,
 }: {
   children: ReactNode;
 }) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const userAgent =
-      typeof window.navigator === "undefined" ? "" : navigator.userAgent;
-    const isMobileDevice = /Mobi|Android/i.test(userAgent);
-    setIsMobile(isMobileDevice);
-  }, []);
+  const isMobile = useMobileStore((state) => state.isMobile);
 
   return (
     <>

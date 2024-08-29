@@ -27,15 +27,17 @@ export default function VideoSection() {
     const handleMouseLeave = () =>
       isScrollingEnabled && setIsScrollingEnabled(false);
 
-    const handleMouseDown = (e: MouseEvent) => {
+    const handleMouseDown = (e: MouseEvent | TouchEvent) => {
       setIsDragging(true);
-      setStartX(e.pageX - containerRef.current!.offsetLeft);
+      const pageX = "touches" in e ? e.touches[0].pageX : e.pageX;
+      setStartX(pageX - containerRef.current!.offsetLeft);
       setScrollLeft(containerRef.current!.scrollLeft);
     };
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e: MouseEvent | TouchEvent) => {
       if (isDragging && containerRef.current) {
-        const x = e.pageX - containerRef.current!.offsetLeft;
+        const pageX = "touches" in e ? e.touches[0].pageX : e.pageX;
+        const x = pageX - containerRef.current!.offsetLeft;
         const walk = (x - startX) * 2; // Scroll speed
         containerRef.current.scrollLeft = scrollLeft - walk;
       }
@@ -55,6 +57,9 @@ export default function VideoSection() {
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("touchstart", handleMouseDown);
+    window.addEventListener("touchmove", handleMouseMove);
+    window.addEventListener("touchend", handleMouseUp);
 
     return () => {
       if (videoSectionElement) {
@@ -65,6 +70,9 @@ export default function VideoSection() {
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("touchstart", handleMouseDown);
+      window.removeEventListener("touchmove", handleMouseMove);
+      window.removeEventListener("touchend", handleMouseUp);
     };
   }, [isScrollingEnabled, isDragging, startX, scrollLeft]);
 
@@ -78,16 +86,16 @@ export default function VideoSection() {
   ];
 
   return (
-    <section className="relative h-[80vh] px-10 pt-24 pb-20 bg-primary-600">
+    <section className="relative h-[70vh] xl:h-[80vh] xl:px-10 pt-10 md:pt-16 xl:pt-24 pb-10 xl:pb-20 bg-primary-600">
       <CurvedBackground backgroundColor="#ffffff" direction="top" reverse />
       <ContentsWrapper className="h-full">
         <motion.div
           ref={videoSectionRef}
-          className="h-full px-10 flex flex-col transition rounded-xl shadow-2xl"
+          className="h-full px-4 sm:px-8 xl:px-10 flex flex-col transition rounded-xl shadow-2xl"
           initial={{ opacity: 1, scale: 1 }}
           animate={{
             opacity: isScrollingEnabled ? 1 : 0.85,
-            scale: isScrollingEnabled ? 1 : 0.95,
+            scale: isScrollingEnabled ? 1.05 : 1,
             backgroundColor: isScrollingEnabled
               ? "rgb(34,34,34)"
               : "rgba(0,0,0,0.5)",
@@ -103,11 +111,7 @@ export default function VideoSection() {
             ))}
           </div>
           <FilmPerforations />
-          {isScrollingEnabled && (
-            <div className="absolute -right-4 -bottom-4">
-              <YoutubeButton />
-            </div>
-          )}
+          {isScrollingEnabled && <YoutubeButton />}
         </motion.div>
       </ContentsWrapper>
     </section>
