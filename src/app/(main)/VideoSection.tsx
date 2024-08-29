@@ -104,7 +104,7 @@ export default function VideoSection() {
           <FilmPerforations />
           <div
             ref={containerRef}
-            className="flex flex-1 gap-10 w-full overflow-x-scroll whitespace-nowrap scroll-smooth rounded-xl scrollbar-hide"
+            className="flex flex-1 gap-4 sm:gap-10 w-full overflow-x-scroll whitespace-nowrap scroll-smooth rounded-xl scrollbar-hide"
           >
             {VIDEOS.map((src) => (
               <VideoComponent key={src} src={src} />
