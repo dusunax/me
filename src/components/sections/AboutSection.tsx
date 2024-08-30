@@ -15,7 +15,7 @@ export default function AboutSection() {
   return (
     <section className="py-10 md:py-16">
       <ContentsWrapper>
-        <div className="flex flex-col lg:flex-row w-full h-[80vh] rounded-xl bg-primary-400 shadow-lg overflow-hidden">
+        <div className="flex flex-col md:flex-row w-full min-h-[80vh] max-h-[860px] rounded-xl bg-primary-400 shadow-lg overflow-hidden">
           <div className="lg:w-2/5">
             <div className="py-8 md:py-20 px-6 md:px-10 flex flex-col gap-6 md:gap-10">
               <ul>
@@ -50,7 +50,7 @@ export default function AboutSection() {
               )}
             </div>
           </div>
-          <div className="lg:w-3/5 h-full">
+          <div className="lg:w-3/5 h-[60vh] md:h-auto md:flex-1">
             <DynamicGrid images={current?.images} />
           </div>
         </div>
