@@ -7,7 +7,7 @@ import {
 } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
 import { useMobileStore } from "../../store/useMobileStore";
-import ContentsWrapper from "../../components/ContentsWrapper";
+import ContentsWrapper from "@components/ContentsWrapper";
 
 interface Props {
   scrollToSection: (sectionId: string) => void;

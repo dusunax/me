@@ -1,7 +1,7 @@
 "use client";
 import { ReactNode } from "react";
 import CustomCursor from "./Cursor";
-import { useMobileStore } from "../store/useMobileStore";
+import { useMobileStore } from "@store/useMobileStore";
 
 export default function CustomCursorProvider({
   children,

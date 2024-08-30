@@ -1,11 +1,11 @@
 "use client";
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { STUDY_CONTENT } from "../../constant/study";
-import ContentsWrapper from "../../components/ContentsWrapper";
-import Accordion from "../../components/Accordion";
-import StudyCanvas from "../../components/StudyCanvas";
-import ResponsiveBreak from "src/packages/components/ResponsiveBreak";
+import { STUDY_CONTENT } from "@constants/study";
+import ContentsWrapper from "@components/ContentsWrapper";
+import Accordion from "@components/Accordion";
+import StudyCanvas from "@components/StudyCanvas";
+import ResponsiveBreak from "@components/ResponsiveBreak";
 
 export default function StudySection() {
   const ref = useRef(null);

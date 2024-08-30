@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { STACKS } from "src/packages/constant/stack";
+import { STACKS } from "@constants/stack";
 
 export default function SkillLoop() {
   return (

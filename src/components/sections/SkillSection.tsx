@@ -1,10 +1,10 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { STACKS } from "../../constant/stack";
-import ContentsWrapper from "../../components/ContentsWrapper";
-import SkillLoop from "../../components/SkillLoop";
-import ResponsiveBreak from "src/packages/components/ResponsiveBreak";
+import { STACKS } from "@constants/stack";
+import ContentsWrapper from "@components/ContentsWrapper";
+import SkillLoop from "@components/SkillLoop";
+import ResponsiveBreak from "@components/ResponsiveBreak";
 
 export default function SkillSection() {
   const ref = useRef(null);

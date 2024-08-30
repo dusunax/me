@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Tooltip from "./ToolTip";
-import { useMobileStore } from "../store/useMobileStore";
+import { useMobileStore } from "@store/useMobileStore";
 
 export default function YoutubeButton() {
   const [isHovered, setIsHovered] = useState(false);

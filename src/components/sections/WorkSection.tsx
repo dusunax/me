@@ -1,8 +1,8 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import ContentsWrapper from "../../components/ContentsWrapper";
-import ResponsiveBreak from "../../components/ResponsiveBreak";
+import ContentsWrapper from "@components/ContentsWrapper";
+import ResponsiveBreak from "@components/ResponsiveBreak";
 
 export default function WorkSection() {
   const ref = useRef(null);

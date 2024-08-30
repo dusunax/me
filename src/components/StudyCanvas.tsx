@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage } from "@react-three/drei";
-import type { StudyContent } from "../constant/study";
+import type { StudyContent } from "@constants/study";
 import Dice from "./Dice";
 import Book from "./Book";
 

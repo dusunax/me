@@ -4,7 +4,7 @@ import { useRef, useState, useMemo, Suspense } from "react";
 import { useTransform } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Billboard, Html, Text } from "@react-three/drei";
-import { getRandomWord } from "../constant/words";
+import { getRandomWord } from "@constants/words";
 import { MotionValue } from "framer-motion";
 import { degreesToRadians } from "popmotion";
 

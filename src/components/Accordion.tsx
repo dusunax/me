@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import type { StudyContent } from "../constant/study";
+import type { StudyContent } from "@constants/study";
 
 type AccordionProps = {
   contents: StudyContent[];

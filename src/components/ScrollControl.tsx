@@ -1,5 +1,5 @@
 import { DoubleArrowDownIcon, DoubleArrowUpIcon } from "@radix-ui/react-icons";
-import { useScroll } from "../hooks/useScroll";
+import { useScroll } from "@hooks/useScroll";
 import ScrollProgress from "./ScrollProgress";
 
 export default function ScrollControl({

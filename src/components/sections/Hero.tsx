@@ -2,9 +2,9 @@
 import { CaretDownIcon } from "@radix-ui/react-icons";
 import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
-import ContentsWrapper from "src/packages/components/ContentsWrapper";
-import MainLogo from "src/packages/components/MainLogo";
-import WordCloud from "src/packages/components/WordCloud";
+import ContentsWrapper from "@components/ContentsWrapper";
+import MainLogo from "@components/MainLogo";
+import WordCloud from "@components/WordCloud";
 
 export default function Hero({ goNextSection }: { goNextSection: () => void }) {
   const ref = useRef(null);

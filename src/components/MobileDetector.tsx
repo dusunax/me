@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { useMobileStore } from "../store/useMobileStore";
+import { useMobileStore } from "@store/useMobileStore";
 
 export default function MobileDetector() {
   const { setIsMobile } = useMobileStore();

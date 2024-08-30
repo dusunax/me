@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import FilmPerforations from "src/packages/components/FilmPerforations";
-import ContentsWrapper from "src/packages/components/ContentsWrapper";
-import YoutubeButton from "src/packages/components/YoutubeButton";
-import CurvedBackground from "src/packages/components/CurvedBackground";
+import FilmPerforations from "@components/FilmPerforations";
+import ContentsWrapper from "@components/ContentsWrapper";
+import YoutubeButton from "@components/YoutubeButton";
+import CurvedBackground from "@components/CurvedBackground";
 
 export default function VideoSection() {
   const containerRef = useRef<HTMLDivElement>(null);
