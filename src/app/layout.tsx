@@ -7,7 +7,26 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dusunax's Portfolio",
-  description: "My personal portfolio",
+  description: "Hello 안녕하세요✨",
+  authors: { name: "Dusunax", url: "https://github.com/dusunax" },
+  keywords: ["portfolio", "dusunax", "web developer", "front-end developer"],
+  viewport: "width=device-width, initial-scale=1",
+  colorScheme: "light",
+  openGraph: {
+    type: "website",
+    url: "https://www.dusuna.site/",
+    siteName: "Dusunax's Portfolio",
+    title: "Dusunax's Portfolio",
+    description: "Hello 안녕하세요✨",
+    images: [
+      {
+        url: "https://www.dusuna.site/logo-full.png",
+        width: 1920,
+        height: 1080,
+        alt: "Dusunax",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
