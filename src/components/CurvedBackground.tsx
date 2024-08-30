@@ -18,7 +18,7 @@ export default function CurvedBackground({
     <div
       className={`absolute w-full left-0 scale-y-[40%] ${
         isTop ? "top-0 -translate-y-full" : "bottom-0"
-      } ${reverse ? "-mt-1" : "mt-1"}`}
+      } ${reverse && isTop ? "-mt-1" : ""} ${!isTop ? "-mb-1" : ""}`}
       style={{ backgroundColor, transform: reverse ? "scaleY(-0.4)" : "" }}
     >
       <motion.div

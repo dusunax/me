@@ -6,11 +6,13 @@ import ContentsWrapper from "@components/ContentsWrapper";
 import Accordion from "@components/Accordion";
 import StudyCanvas from "@components/StudyCanvas";
 import ResponsiveBreak from "@components/ResponsiveBreak";
+import { HandIcon } from "@radix-ui/react-icons";
 
 export default function StudySection() {
   const ref = useRef(null);
   const isInView = useInView(ref);
   const [currentContent, setCurrentContent] = useState<number>(0);
+  const [isInteracting, setIsInteracting] = useState(false);
 
   const changeContentIndex = (index: number) => {
     setCurrentContent(index);
@@ -34,6 +36,16 @@ export default function StudySection() {
     <section ref={ref}>
       <ContentsWrapper>
         <div className="flex flex-col gap-4 sm:gap-10 py-10 sm:py-20">
+          <p>
+            Study Group:{" "}
+            <a
+              href="https://github.com/monthly-cs"
+              target="_blank"
+              className="underline"
+            >
+              https://github.com/monthly-cs
+            </a>
+          </p>
           <div className="flex flex-col sm:items-center xl:flex-row gap-y-4 gap-x-16 xl:items-center justify-between">
             <div className="flex flex-col sm:flex-row gap-y-2 gap-x-8 md:items-center">
               <motion.h2
@@ -69,7 +81,22 @@ export default function StudySection() {
               prevContent={prevContent}
               changeContentIndex={changeContentIndex}
             />
-            <div className="w-full max-h-[600px] h-[60vh] bg-primary-400 rounded-xl">
+            <div
+              className="relative w-full max-h-[600px] h-[60vh] bg-primary-400 rounded-xl"
+              onMouseDown={() => setIsInteracting(true)}
+              onMouseUp={() => setIsInteracting(false)}
+              onMouseOver={() => setIsInteracting(false)}
+              onTouchStart={() => setIsInteracting(true)}
+              onTouchEnd={() => setIsInteracting(false)}
+            >
+              <HandIcon
+                color={`${isInteracting ? "#d0beb7" : "#fff"}`}
+                width={32}
+                height={32}
+                className={`absolute right-0 top-0 m-3 p-1 border border-white rounded-full transition ${
+                  isInteracting ? "bg-white" : "animate-pulse"
+                }`}
+              />
               <StudyCanvas content={STUDY_CONTENT[currentContent]} />
             </div>
           </div>
