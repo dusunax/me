@@ -78,3 +78,18 @@ body {
 .font-size-xs {
   @apply text-xs sm:text-xs md:text-sm leading-normal;
 }
+
+#md-viewer p {
+  word-break: keep-all !important;
+}
+
+#md-viewer li {
+  list-style-type: disc;
+  list-style-position: outside;
+  display: flex;
+  gap: 0.5rem;
+}
+
+#md-viewer li::before {
+  background-color: black;
+}

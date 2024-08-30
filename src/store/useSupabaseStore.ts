@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 export interface ABOUT {
+  id: number;
   title: string;
   "sub-title": string;
   content: string;

@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { Viewer } from "@toast-ui/react-editor";
+import "@toast-ui/editor/dist/toastui-editor.css";
 
 export default function FadeInText({
   text,
@@ -24,7 +26,7 @@ export default function FadeInText({
           y: 0,
         }}
         transition={{ duration: 0.2, delay: 0.3 }}
-        className="font-size-lg font-semibold"
+        className="font-size-lg font-semibold opacity-90"
       >
         {title}
       </motion.p>
@@ -37,8 +39,15 @@ export default function FadeInText({
         }}
         transition={{ duration: 0.2, delay: 0.3 }}
         className="font-size-md"
+        id="md-viewer"
       >
-        {text}
+        <Viewer
+          initialEditType="markdown"
+          previewStyle="vertical"
+          height="600px"
+          initialValue={text}
+          key={text}
+        />
       </motion.p>
     </div>
   );

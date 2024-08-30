@@ -21,24 +21,28 @@ export default function AboutSection() {
           <div className="lg:w-2/5">
             <div className="py-8 md:py-20 px-6 md:px-10 flex flex-col gap-6 md:gap-10">
               <ul>
-                {about.map((item, index) => (
-                  <motion.li
-                    className="border-l-2 border-green-600 heading-md pl-2 sm:pl-4 py-1 sm:py-2"
-                    initial={{ opacity: 0.3, x: 10 * index }}
-                    animate={{ opacity: currentContentIdx === index ? 1 : 0.3 }}
-                    whileInView={{ x: 0 }}
-                    whileHover={{
-                      opacity: 0.8,
-                      color: "#fff",
-                      borderColor: "#fff",
-                    }}
-                    key={item.title}
-                    transition={{ delay: 0.1 }}
-                    onClick={() => setCurrentContentIdx(index)}
-                  >
-                    <button>{item.title}</button>
-                  </motion.li>
-                ))}
+                {about
+                  .sort((a, b) => a.id - b.id)
+                  .map((item, index) => (
+                    <motion.li
+                      className="border-l-2 border-green-600 heading-md pl-2 sm:pl-4 py-1 sm:py-2"
+                      initial={{ opacity: 0.3, x: 10 * index }}
+                      animate={{
+                        opacity: currentContentIdx === index ? 1 : 0.3,
+                      }}
+                      whileInView={{ x: 0 }}
+                      whileHover={{
+                        opacity: 0.8,
+                        color: "#fff",
+                        borderColor: "#fff",
+                      }}
+                      key={item.title}
+                      transition={{ delay: 0.1 }}
+                      onClick={() => setCurrentContentIdx(index)}
+                    >
+                      <button>{item.title}</button>
+                    </motion.li>
+                  ))}
               </ul>
               <FadeInText title={current["sub-title"]} text={current.content} />
             </div>
