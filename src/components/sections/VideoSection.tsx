@@ -86,9 +86,19 @@ export default function VideoSection() {
   ];
 
   return (
-    <section className="relative h-[70vh] xl:h-[80vh] xl:px-10 pt-10 md:pt-16 xl:pt-24 pb-10 xl:pb-20 bg-primary-600">
-      <CurvedBackground backgroundColor="#ffffff" direction="top" reverse />
+    <section className="relative h-[70vh] xl:h-[80vh] xl:px-10 pt-10 md:pt-16 xl:pt-24 pb-12 xl:pb-24 bg-primary-600">
+      <CurvedBackground backgroundColor="#ffffff" direction="top" reverse />{" "}
       <ContentsWrapper className="h-full">
+        <p className="mb-2 sm:mb-6">
+          Youtube Channel:{" "}
+          <a
+            href="https://www.youtube.com/@dusunax"
+            target="_blank"
+            className="underline"
+          >
+            https://www.youtube.com/@dusunax
+          </a>
+        </p>
         <motion.div
           ref={videoSectionRef}
           className="h-full px-4 sm:px-8 xl:px-10 flex flex-col transition rounded-xl shadow-2xl"
