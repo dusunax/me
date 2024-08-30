@@ -1,12 +1,13 @@
 import CustomCursorProvider from "@/components/CustomCursorProvider";
-import ScreenLoading from "@/components/ScreenLoading";
 import MainSections from "@/components/sections/MainSections";
+import { SupabaseProvider } from "@/context/SupabaseContext";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <CustomCursorProvider>
-      <ScreenLoading />
-      <MainSections />
-    </CustomCursorProvider>
+    <SupabaseProvider>
+      <CustomCursorProvider>
+        <MainSections />
+      </CustomCursorProvider>
+    </SupabaseProvider>
   );
 }

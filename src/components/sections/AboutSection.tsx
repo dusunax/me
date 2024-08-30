@@ -2,12 +2,17 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import ContentsWrapper from "@components/ContentsWrapper";
-import { ABOUT } from "@constants/about";
 import DynamicGrid from "@components/DynamicGrid";
 import FadeInText from "@components/FadeInText";
+import { useDataStore } from "@/store/useSupabaseStore";
 
 export default function AboutSection() {
-  const [currentContent, setCurrentContent] = useState<number>(0);
+  const [currentContentIdx, setCurrentContentIdx] = useState<number>(0);
+  const about = useDataStore((state) => state.about);
+  if (!about.length) return null;
+
+  const current = about[currentContentIdx];
+  if (!current) return null;
 
   return (
     <section className="py-10 md:py-16">
@@ -16,11 +21,11 @@ export default function AboutSection() {
           <div className="lg:w-2/5">
             <div className="py-8 md:py-20 px-6 md:px-10 flex flex-col gap-6 md:gap-10">
               <ul>
-                {ABOUT.map((item, index) => (
+                {about.map((item, index) => (
                   <motion.li
                     className="border-l-2 border-green-600 heading-md pl-2 sm:pl-4 py-1 sm:py-2"
                     initial={{ opacity: 0.3, x: 10 * index }}
-                    animate={{ opacity: currentContent === index ? 1 : 0.3 }}
+                    animate={{ opacity: currentContentIdx === index ? 1 : 0.3 }}
                     whileInView={{ x: 0 }}
                     whileHover={{
                       opacity: 0.8,
@@ -29,17 +34,17 @@ export default function AboutSection() {
                     }}
                     key={item.title}
                     transition={{ delay: 0.1 }}
-                    onClick={() => setCurrentContent(index)}
+                    onClick={() => setCurrentContentIdx(index)}
                   >
                     <button>{item.title}</button>
                   </motion.li>
                 ))}
               </ul>
-              <FadeInText text={ABOUT[currentContent].content} />
+              <FadeInText title={current["sub-title"]} text={current.content} />
             </div>
           </div>
           <div className="lg:w-3/5 h-full">
-            <DynamicGrid images={ABOUT[currentContent].images} />
+            <DynamicGrid images={current.images} />
           </div>
         </div>
       </ContentsWrapper>

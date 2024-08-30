@@ -1,7 +1,13 @@
 import Image from "next/image";
 import { HTMLMotionProps, motion } from "framer-motion";
 
-export default function MainLogo({ fontSize }: { fontSize: number }) {
+export default function MainLogo({
+  fontSize,
+  animate = true,
+}: {
+  fontSize: number;
+  animate?: boolean;
+}) {
   return (
     <div className="relative">
       <MainText fontSize={fontSize} />
@@ -10,8 +16,8 @@ export default function MainLogo({ fontSize }: { fontSize: number }) {
         <motion.div
           className="translate-x-full"
           initial={{ x: fontSize * 0.9, scale: 0.8 }}
-          animate={{ x: fontSize * 1.5, scale: 1 }}
-          transition={{ duration: 0.4 }}
+          animate={animate ? { x: fontSize * 1.5, scale: 1 } : {}}
+          transition={{ duration: 0.2 }}
           whileHover={{ scale: 1.1 }}
           style={{ width: `${fontSize * 2}px`, height: `${fontSize * 2}px` }}
           drag
@@ -19,7 +25,7 @@ export default function MainLogo({ fontSize }: { fontSize: number }) {
           <MotionCircle
             className="-top-2 -left-2"
             duration={0.3}
-            delay={0.5}
+            animate={animate}
             style={{
               width: `${fontSize * 0.8}px`,
               height: `${fontSize * 0.8}px`,
@@ -28,7 +34,7 @@ export default function MainLogo({ fontSize }: { fontSize: number }) {
           <MotionCircle
             className="-right-2 bottom-0"
             duration={0.1}
-            delay={0.7}
+            animate={animate}
             style={{
               width: `${fontSize * 0.3}px`,
               height: `${fontSize * 0.3}px`,
@@ -37,7 +43,7 @@ export default function MainLogo({ fontSize }: { fontSize: number }) {
           <MotionCircle
             className="right-6 -bottom-3"
             duration={0.3}
-            delay={0.7}
+            animate={animate}
             style={{
               width: `${fontSize * 0.2}px`,
               height: `${fontSize * 0.2}px`,
@@ -72,14 +78,15 @@ interface MotionCircleProps extends HTMLMotionProps<"div"> {
   className?: string;
   duration?: number;
   delay?: number;
+  animate: boolean;
 }
 
-function MotionCircle({ className, ...props }: MotionCircleProps) {
+function MotionCircle({ className, animate, ...props }: MotionCircleProps) {
   return (
     <motion.div
       className={`absolute rounded-full bg-primary-500 ${className}`}
       initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
+      animate={animate ? { scale: 1 } : {}}
       {...props}
     ></motion.div>
   );

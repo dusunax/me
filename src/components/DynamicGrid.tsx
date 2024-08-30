@@ -36,7 +36,7 @@ export default function DynamicGrid({ images }: { images: string[] }) {
       >
         {currentLayout.items.map((row, rowIndex) => {
           return (
-            <AnimatePresence mode="wait" key={`image-row${rowIndex}`}>
+            <AnimatePresence mode="popLayout" key={`image-row${rowIndex}`}>
               {row.map((colSpan, colIndex) => {
                 count++;
                 return (
@@ -58,10 +58,12 @@ export default function DynamicGrid({ images }: { images: string[] }) {
                       fill
                       src={images[count - 1]}
                       alt=""
-                      objectFit="cover"
                       placeholder="blur"
                       blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
                       quality={75}
+                      style={{
+                        objectFit: "cover",
+                      }}
                     />
                   </motion.div>
                 );

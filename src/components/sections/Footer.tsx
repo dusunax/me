@@ -1,4 +1,5 @@
 "use client";
+import { RefObject } from "react";
 import {
   EnvelopeClosedIcon,
   GitHubLogoIcon,
@@ -8,11 +9,16 @@ import {
 import { motion } from "framer-motion";
 import { useMobileStore } from "../../store/useMobileStore";
 import ContentsWrapper from "@components/ContentsWrapper";
+import { capitalizeWords } from "@/utils/capitalizeWords";
 
 interface Props {
   scrollToSection: (sectionId: string) => void;
+  sections: {
+    id: string;
+    ref: RefObject<HTMLDivElement>;
+  }[];
 }
-export default function Footer({ scrollToSection }: Props) {
+export default function Footer({ scrollToSection, sections }: Props) {
   const isMobile = useMobileStore((state) => state.isMobile);
   const iconSize = isMobile ? 20 : 40;
 
@@ -20,41 +26,21 @@ export default function Footer({ scrollToSection }: Props) {
     <footer className="min-h-[70vh] bg-[#78655f] text-white">
       <ContentsWrapper className="h-full justify-between flex flex-col pt-10 sm:pt-20 pb-12">
         <ul className="flex-1 flex flex-col sm:gap-3 heading-lg mb-8">
-          <motion.li
-            whileHover={{ opacity: 0.7 }}
-            whileTap={{ opacity: 0.4 }}
-            onClick={() => scrollToSection("hero")}
-          >
-            <button className="border-b-2">Top</button>
-          </motion.li>
-          <motion.li
-            whileHover={{ opacity: 0.7 }}
-            whileTap={{ opacity: 0.4 }}
-            onClick={() => scrollToSection("video")}
-          >
-            <button className="border-b-2">Video</button>
-          </motion.li>
-          <motion.li
-            whileHover={{ opacity: 0.7 }}
-            whileTap={{ opacity: 0.4 }}
-            onClick={() => scrollToSection("work")}
-          >
-            <button className="border-b-2">Work</button>
-          </motion.li>
-          <motion.li
-            whileHover={{ opacity: 0.7 }}
-            whileTap={{ opacity: 0.4 }}
-            onClick={() => scrollToSection("skill")}
-          >
-            <button className="border-b-2">Skill</button>
-          </motion.li>
-          <motion.li
-            whileHover={{ opacity: 0.7 }}
-            whileTap={{ opacity: 0.4 }}
-            onClick={() => scrollToSection("study")}
-          >
-            <button className="border-b-2">Study</button>
-          </motion.li>
+          {sections.map((section) => {
+            if (section.id === "footer") return null;
+            return (
+              <motion.li
+                whileHover={{ opacity: 0.7 }}
+                whileTap={{ opacity: 0.4 }}
+                onClick={() => scrollToSection(section.id)}
+                key={section.id}
+              >
+                <button className="border-b-2">
+                  {capitalizeWords(section.id)}
+                </button>
+              </motion.li>
+            );
+          })}
         </ul>
 
         <h2 className="heading-2xl text-right opacity-30 mb-2">Contact</h2>

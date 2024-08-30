@@ -1,7 +1,8 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, Suspense, useState } from "react";
 import { useScroll } from "@hooks/useScroll";
 import ScrollControl from "@components/ScrollControl";
+import LoadingScreen from "../LoadingScreen";
 import Hero from "./Hero";
 import Footer from "./Footer";
 import AboutSection from "./AboutSection";
@@ -9,8 +10,35 @@ import WorkSection from "./WorkSection";
 import SkillSection from "./SkillSection";
 import StudySection from "./StudySection";
 import VideoSection from "./VideoSection";
+import { useSupabase } from "@/context/SupabaseContext";
+import { useDataStore } from "@/store/useSupabaseStore";
 
-export default function MainSections() {
+export default function MainPage() {
+  return (
+    <Suspense fallback={<LoadingScreen />}>
+      <MainSections />
+    </Suspense>
+  );
+}
+
+const MainSections = () => {
+  const sb = useSupabase();
+  const setAbout = useDataStore((state) => state.setAbout);
+  const [beforeLoading, setBeforeLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchAbout = async () => {
+      const { data, error } = await sb.from("about").select();
+      if (error) {
+        console.error("Error fetching data:", error);
+      } else {
+        setAbout(data || []);
+        setBeforeLoading(false);
+      }
+    };
+    fetchAbout();
+  }, [sb, setAbout]);
+
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const workRef = useRef<HTMLDivElement>(null);
@@ -34,6 +62,7 @@ export default function MainSections() {
 
   return (
     <>
+      {beforeLoading && <LoadingScreen animate={false} />}
       <ScrollControl
         goNextSection={goNextSection}
         goPrevSection={goPrevSection}
@@ -60,9 +89,9 @@ export default function MainSections() {
         </div>
 
         <div ref={footerRef}>
-          <Footer scrollToSection={scrollToSection} />
+          <Footer scrollToSection={scrollToSection} sections={sections} />
         </div>
       </main>
     </>
   );
-}
+};

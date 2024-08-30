@@ -35,4 +35,8 @@ export const STACKS = [
     name: "VERCEL",
     icon: "https://img.shields.io/badge/-%23000000.svg?logo=vercel&logoColor=white",
   },
+  {
+    name: "SUPABASE",
+    icon: "https://img.shields.io/badge/-%23000000.svg?logo=supabase&logoColor=#3cc98b",
+  },
 ];

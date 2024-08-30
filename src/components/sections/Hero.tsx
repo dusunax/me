@@ -12,14 +12,9 @@ export default function Hero({ goNextSection }: { goNextSection: () => void }) {
 
   return (
     <div className="relative px-6 pt-6 h-[90vh] bg-white shadow-xl z-10 rounded-b-2xl">
-      <motion.div
-        className="absolute left-0 top-0 w-full h-full"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.2 }}
-      >
+      <div className="absolute left-0 top-0 w-full h-full">
         <WordCloud scrollYProgress={scrollYProgress} />
-      </motion.div>
+      </div>
 
       <ContentsWrapper className="h-full flex flex-col justify-between">
         <div className="relative flex-1 flex">
