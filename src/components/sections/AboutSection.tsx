@@ -9,8 +9,6 @@ import { useDataStore } from "@/store/useSupabaseStore";
 export default function AboutSection() {
   const [currentContentIdx, setCurrentContentIdx] = useState<number>(0);
   const about = useDataStore((state) => state.about);
-  if (!about.length) return null;
-
   const current = about[currentContentIdx];
   if (!current) return null;
 
@@ -22,7 +20,7 @@ export default function AboutSection() {
             <div className="py-8 md:py-20 px-6 md:px-10 flex flex-col gap-6 md:gap-10">
               <ul>
                 {about
-                  .sort((a, b) => a.id - b.id)
+                  ?.sort((a, b) => a.id - b.id)
                   .map((item, index) => (
                     <motion.li
                       className="border-l-2 border-green-600 heading-md pl-2 sm:pl-4 py-1 sm:py-2"
@@ -44,11 +42,16 @@ export default function AboutSection() {
                     </motion.li>
                   ))}
               </ul>
-              <FadeInText title={current["sub-title"]} text={current.content} />
+              {current && (
+                <FadeInText
+                  title={current["sub-title"]}
+                  text={current.content}
+                />
+              )}
             </div>
           </div>
           <div className="lg:w-3/5 h-full">
-            <DynamicGrid images={current.images} />
+            <DynamicGrid images={current?.images} />
           </div>
         </div>
       </ContentsWrapper>

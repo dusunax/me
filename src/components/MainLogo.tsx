@@ -57,6 +57,7 @@ export default function MainLogo({
               src="/profile.png"
               alt="Dusunax"
               fill
+              sizes="100%"
               className="select-none pointer-events-none"
               priority
             />
