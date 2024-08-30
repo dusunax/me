@@ -51,8 +51,8 @@ const MainSections = () => {
     { id: "hero", ref: heroRef },
     { id: "about", ref: aboutRef },
     { id: "work", ref: workRef },
-    { id: "skill", ref: skillRef },
     { id: "study", ref: studyRef },
+    { id: "skill", ref: skillRef },
     { id: "video", ref: videoRef },
     { id: "footer", ref: footerRef },
   ];
@@ -78,11 +78,11 @@ const MainSections = () => {
         <div ref={workRef}>
           <WorkSection />
         </div>
-        <div ref={skillRef}>
-          <SkillSection />
-        </div>
         <div ref={studyRef}>
           <StudySection />
+        </div>
+        <div ref={skillRef}>
+          <SkillSection />
         </div>
         <div ref={videoRef}>
           <VideoSection />
