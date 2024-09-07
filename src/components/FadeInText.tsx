@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { Viewer } from "@toast-ui/react-editor";
+// eslint-disable-next-line import/no-unresolved -- @toast-ui/editor/dist/toastui-editor.css is correctly imported but ESLint can't resolve it
 import "@toast-ui/editor/dist/toastui-editor.css";
 import { DynamicViewer } from "./viewer/DynamicViewer";
 

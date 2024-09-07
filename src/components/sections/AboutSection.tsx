@@ -17,8 +17,8 @@ export default function AboutSection() {
     <section className="relative py-10 md:py-16 bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400">
       <CurvedBackground backgroundColor="#ffffff" direction="bottom" />
       <ContentsWrapper>
-        <div className="flex flex-col md:flex-row w-full min-h-[80vh] max-h-[860px] rounded-xl bg-primary-300 shadow-lg overflow-hidden">
-          <div className="lg:w-2/5">
+        <div className="flex flex-col md:flex-row w-full min-h-[80vh] max-h-[1280px] rounded-xl bg-primary-300 shadow-lg overflow-hidden">
+          <div className="md:w-1/2 lg:w-2/5">
             <div className="py-8 md:py-20 px-6 md:px-10 flex flex-col gap-6 md:gap-10">
               <ul>
                 {about
@@ -52,7 +52,7 @@ export default function AboutSection() {
               )}
             </div>
           </div>
-          <div className="lg:w-3/5 h-[60vh] md:h-auto md:flex-1">
+          <div className="lg:w-3/5 shrink-0 h-[60vh] md:h-auto md:flex-1">
             <DynamicGrid images={current?.images} />
           </div>
         </div>

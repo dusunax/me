@@ -10,8 +10,6 @@ export const metadata: Metadata = {
   description: "Hello 안녕하세요✨",
   authors: { name: "Dusunax", url: "https://github.com/dusunax" },
   keywords: ["portfolio", "dusunax", "web developer", "front-end developer"],
-  viewport: "width=device-width, initial-scale=1",
-  colorScheme: "light",
   openGraph: {
     type: "website",
     url: "https://www.dusuna.site/",
