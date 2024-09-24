@@ -11,7 +11,7 @@ import { HandIcon } from "@radix-ui/react-icons";
 export default function StudySection() {
   const ref = useRef(null);
   const isInView = useInView(ref);
-  const [currentContent, setCurrentContent] = useState<number>(0);
+  const [currentContent, setCurrentContent] = useState(0);
   const [isInteracting, setIsInteracting] = useState(false);
 
   const changeContentIndex = (index: number) => {
@@ -99,6 +99,7 @@ export default function StudySection() {
               />
               <StudyCanvas content={STUDY_CONTENT[currentContent]} />
             </div>
+            <div className="h-[100vh]"></div>
           </div>
         </div>
       </ContentsWrapper>

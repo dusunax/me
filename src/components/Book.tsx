@@ -1,20 +1,32 @@
-import React, { useRef } from "react";
-import { TextureLoader } from "three";
-import { useLoader, useFrame } from "@react-three/fiber";
+import React, { useRef, useEffect, useState } from "react";
+import { Texture } from "three";
+import { useFrame } from "@react-three/fiber";
 
 type BookProps = {
   images: string[];
 };
 
 export default function Book({ images }: BookProps) {
-  const frontTexture = useLoader(TextureLoader, images[0]);
+  const [frontTexture, setFrontTexture] = useState<Texture | null>(null);
   const meshRef = useRef<any>(null);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = images[0];
+    img.onload = () => {
+      const texture = new Texture(img);
+      texture.needsUpdate = true;
+      setFrontTexture(texture);
+    };
+  }, [images]);
 
   useFrame(() => {
     if (meshRef.current) {
       meshRef.current.rotation.y += 0.005;
     }
   });
+
+  if (!frontTexture) return null;
 
   return (
     <mesh ref={meshRef} rotation={[Math.PI / 6, Math.PI / 4, 0]}>
