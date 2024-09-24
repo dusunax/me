@@ -99,7 +99,6 @@ export default function StudySection() {
               />
               <StudyCanvas content={STUDY_CONTENT[currentContent]} />
             </div>
-            <div className="h-[100vh]"></div>
           </div>
         </div>
       </ContentsWrapper>
