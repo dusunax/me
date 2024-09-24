@@ -22,23 +22,6 @@ export default function MainPage() {
 }
 
 const MainSections = () => {
-  const sb = useSupabase();
-  const setAbout = useDataStore((state) => state.setAbout);
-  const [beforeLoading, setBeforeLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchAbout = async () => {
-      const { data, error } = await sb.from("about").select();
-      if (error) {
-        console.error("Error fetching data:", error);
-      } else {
-        setAbout(data || []);
-        setBeforeLoading(false);
-      }
-    };
-    fetchAbout();
-  }, [sb, setAbout]);
-
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const workRef = useRef<HTMLDivElement>(null);
@@ -62,7 +45,6 @@ const MainSections = () => {
 
   return (
     <>
-      {beforeLoading && <LoadingScreen animate={false} />}
       <ScrollControl
         goNextSection={goNextSection}
         goPrevSection={goPrevSection}
