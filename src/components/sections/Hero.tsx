@@ -7,8 +7,7 @@ import MainLogo from "@components/MainLogo";
 import WordCloud from "@components/WordCloud";
 
 export default function Hero({ goNextSection }: { goNextSection: () => void }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
+  const { scrollYProgress } = useScroll();
 
   return (
     <div className="relative px-6 pt-6 h-[90vh] bg-white shadow-xl z-10 rounded-b-2xl">
