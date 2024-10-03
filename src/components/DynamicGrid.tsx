@@ -64,7 +64,7 @@ export default function DynamicGrid({ images }: { images: string[] }) {
                       style={{
                         objectFit: "cover",
                       }}
-                      unoptimized={images[count - 1].slice(-3) === "gif"}
+                      unoptimized={images[count - 1]?.slice(-3) === "gif"}
                       sizes="(max-width: 600px) 80vw, 400px"
                     />
                   </motion.div>
