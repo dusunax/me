@@ -86,7 +86,7 @@ export default function VideoSection() {
   ];
 
   return (
-    <section className="relative h-[70vh] xl:h-[80vh] xl:px-10 pt-10 md:pt-16 xl:pt-24 pb-12 xl:pb-24 bg-primary-600">
+    <section className="relative min-h-[600px] h-[70vh] xl:h-[80vh] px-12 xl:px-16 pt-10 md:pt-16 xl:pt-24 pb-24 bg-primary-600">
       <CurvedBackground backgroundColor="#ffffff" direction="top" reverse />{" "}
       <ContentsWrapper className="h-full">
         <p className="mb-2 sm:mb-6">

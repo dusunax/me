@@ -43,10 +43,22 @@ export const getRandomLayout = (numImages: number): Layout => {
       items: [[3], [1, 2], [3]],
     },
     {
-      id: 12,
+      id: 13,
       length: 4,
       cols: 3,
       items: [[3], [3], [1, 2]],
+    },
+    {
+      id: 14,
+      length: 5,
+      cols: 3,
+      items: [[3], [2, 1], [1, 2]],
+    },
+    {
+      id: 15,
+      length: 5,
+      cols: 3,
+      items: [[2, 1], [3], [2, 1]],
     },
   ];
 

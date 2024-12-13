@@ -51,6 +51,11 @@ export default function Accordion({
                 </div>
               )}
             </div>
+            {content.author && (
+              <span className="font-size-xs opacity-50">
+                by {content.author}
+              </span>
+            )}
             <strong className="font-size-xs">{content.subtitle}</strong>
             {content.title === contents[currentContent].title && (
               <motion.div

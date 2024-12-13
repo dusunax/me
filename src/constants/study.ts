@@ -1,6 +1,7 @@
 export type StudyContent = {
   title: string;
   orignalTitle?: string;
+  author?: string;
   subtitle: string;
   description: string;
   type: "book" | "article" | "documentation" | "video lecture";
@@ -15,6 +16,7 @@ export const STUDY_CONTENT: StudyContent[] = [
     title: "모던 자바스크립트 딥 다이브",
     orignalTitle: "Modern JavaScript Deep Dive",
     subtitle: "자바스크립트의 핵심 개념과 동작 원리",
+    author: "이웅모",
     description:
       "The book is about modern JavaScript. Study with friends in every Saturday at FigJam.",
     duration: "2023.09.09 - 2023.12.30",
@@ -27,6 +29,7 @@ export const STUDY_CONTENT: StudyContent[] = [
     title: "모던 리액트 딥 다이브",
     orignalTitle: "Modern React Deep Dive",
     subtitle: "리액트의 핵심 개념과 동작 원리",
+    author: "김용찬",
     description:
       "The book is about modern React. It is a part of monthly-cs study. Study with 10 people in every Sunday at Seoul.",
     duration: "2024.03.04 - 2024.04.28",
@@ -39,6 +42,7 @@ export const STUDY_CONTENT: StudyContent[] = [
     title: "이펙티브 타입스크립트",
     orignalTitle: "Effective TypeScript",
     subtitle: "타입스크립트의 동작 원리의 이해와 구체적인 조언 62가지",
+    author: "Dan Vanderkam",
     description:
       "The book is about effective TypeScript. It is a part of monthly-cs study. Study with 9 people in every Sunday at Seoul.",
     duration: "2024.05.12 - 2024.06.30",
@@ -51,11 +55,25 @@ export const STUDY_CONTENT: StudyContent[] = [
     title: "개발자 온보딩 가이드",
     orignalTitle: "The Missing Readme",
     subtitle: "좋은 개발자로 성장하기 위한 가이드",
+    author: "Chris Riccomini and Dmitriy Ryaboy",
     description: "The book for junior developers. Reading by myself, ongoing.",
     duration: "2024.08 -",
     type: "book",
     isFinished: false,
     images: ["/book-4.png"],
+    link: "",
+  },
+  {
+    title: "자바스크립트 + 리액트 디자인 패턴",
+    orignalTitle: "Learning JavaScript Design Patterns",
+    subtitle:
+      "자바스크립트와 리액트의 최신 패턴부터 서버, 랜더링 관련 패턴까지",
+    author: "Addy Osmani",
+    description: "The book is about design patterns in JavaScript and React.",
+    duration: "2024.10.13 - 2024.12.01",
+    type: "book",
+    isFinished: true,
+    images: ["/book-5.png"],
     link: "",
   },
 ];

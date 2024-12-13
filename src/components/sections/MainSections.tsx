@@ -77,6 +77,9 @@ const MainSections = () => {
         <div ref={heroRef}>
           <Hero goNextSection={goNextSection} />
         </div>
+        <div ref={videoRef}>
+          <VideoSection />
+        </div>
         <div ref={aboutRef}>
           <AboutSection />
         </div>
@@ -88,9 +91,6 @@ const MainSections = () => {
         </div>
         <div ref={skillRef}>
           <SkillSection />
-        </div>
-        <div ref={videoRef}>
-          <VideoSection />
         </div>
 
         <div ref={footerRef}>
