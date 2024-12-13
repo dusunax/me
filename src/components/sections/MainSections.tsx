@@ -54,11 +54,11 @@ const MainSections = () => {
 
   const sections = [
     { id: "hero", ref: heroRef },
+    { id: "video", ref: videoRef },
     { id: "about", ref: aboutRef },
     { id: "work", ref: workRef },
     { id: "study", ref: studyRef },
     { id: "skill", ref: skillRef },
-    { id: "video", ref: videoRef },
     { id: "footer", ref: footerRef },
   ];
 
