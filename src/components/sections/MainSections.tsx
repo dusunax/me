@@ -73,7 +73,7 @@ const MainSections = () => {
         goPrevSection={goPrevSection}
         scrollProgress={scrollProgress}
       />
-      <main className="flex min-h-screen flex-col justify-between cursor-none overflow-hidden">
+      <main className="flex min-h-screen flex-col justify-between cursor-none overflow-hidden bg-white">
         <div ref={heroRef}>
           <Hero goNextSection={goNextSection} />
         </div>
